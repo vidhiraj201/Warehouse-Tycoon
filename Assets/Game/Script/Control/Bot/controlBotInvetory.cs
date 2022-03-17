@@ -213,7 +213,7 @@ namespace wearhouse.Control
         {
             if (other.gameObject.CompareTag("Battery"))
             {
-                GetComponent<Move.moveBot>().currentCharge += GetComponent<Move.moveBot>().maxCharge;
+                GetComponent<Move.moveBot>().currentCharge += (GetComponent<Move.moveBot>().maxCharge * 25 * 0.01f);
                 Destroy(other.gameObject);
             }
         }

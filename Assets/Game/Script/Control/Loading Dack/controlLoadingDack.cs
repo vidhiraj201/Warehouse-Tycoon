@@ -288,7 +288,7 @@ namespace wearhouse.Control
                 }
                                
             }
-            if(TargetedBot!=null)
+            if(TargetedBot != null)
                 setTargetStorePosition();
         }
         public void setTargetStorePosition()

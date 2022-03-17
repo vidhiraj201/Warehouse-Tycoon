@@ -127,13 +127,13 @@ namespace wearhouse.Control
 
 
         float xB = 0;
-        public void GiveBatteryToRobot(float ID, Collider collider, float BatteryStatus)
+        public void GiveBatteryToRobot(float ID, Collider collider, float BatteryStatus, float max)
         {
             if (xB > 0)
                 xB -= Time.deltaTime;
             if (xB <= 0)
             {
-                if (Cart.Count > 0 && BatteryStatus <= 0)
+                if (Cart.Count > 0 && BatteryStatus < (max/**75*0.01f*/))
                 {
 
                     for (int i = 0; i <= Cart.Count - 1;)
@@ -157,7 +157,7 @@ namespace wearhouse.Control
                              c[c.Count - 1].transform.parent = inventory;
                              c[c.Count - 1].transform.GetComponent<controlObject>().isMove = true;
                              c[c.Count - 1].transform.GetComponent<controlObject>().movementSpeed = G.GetComponent<controlLoadingDack>().ObjectMovementSpeed;*/
-                            xB = 1.5f;
+                            xB = 0.5f;
                             break;
                         }
                     }
@@ -201,7 +201,7 @@ namespace wearhouse.Control
             if (other.gameObject.CompareTag("Robot"))
             {
 
-                GiveBatteryToRobot(other.GetComponent<controlBotInvetory>().BatteryID, other, other.GetComponent<Move.moveBot>().currentCharge);
+                GiveBatteryToRobot(other.GetComponent<controlBotInvetory>().BatteryID, other, other.GetComponent<Move.moveBot>().currentCharge, other.GetComponent<Move.moveBot>().maxCharge);
             }
         }
         /*private void OnTriggerEnter(Collider other)
