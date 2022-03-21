@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlObject : MonoBehaviour
     {

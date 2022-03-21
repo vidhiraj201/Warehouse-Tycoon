@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace wearhouse.Move
+namespace warehouse.Move
 {
     public class movePlayer : MonoBehaviour
     {

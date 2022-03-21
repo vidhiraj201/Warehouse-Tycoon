@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace wearhouse.Core
+namespace warehouse.Core
 {
     public class GameManager : MonoBehaviour
     {

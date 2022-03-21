@@ -9,12 +9,12 @@ public class coreRobotSpwanner : MonoBehaviour
     public int Amount;
     public Transform Inventory;
 
-    private wearhouse.Core.GameManager gameManager;
+    private warehouse.Core.GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         HireUI.SetActive(false);
-        gameManager = FindObjectOfType<wearhouse.Core.GameManager>();
+        gameManager = FindObjectOfType<warehouse.Core.GameManager>();
     }
 
     // Update is called once per frame

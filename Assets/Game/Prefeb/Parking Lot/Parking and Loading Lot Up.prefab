@@ -475,6 +475,7 @@ MonoBehaviour:
   isUp: 1
   isOccupied: 0
   NPCTruck: {fileID: 0}
+  controlLoadingDack: {fileID: 2840782446425812232}
   isLocked: 1
 --- !u!1 &2840782446281009374
 GameObject:

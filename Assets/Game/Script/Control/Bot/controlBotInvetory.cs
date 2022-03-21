@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlBotInvetory : MonoBehaviour
     {
@@ -41,14 +41,6 @@ namespace wearhouse.Control
             {
                 if (Cart[i] == null)
                     Cart.Remove(Cart[i]);
-            }
-        }
-        void DeleteNotInUseObjects()
-        {
-            for (int i = 0; i <= Cart.Count - 1; i++)
-            {
-                if (Cart[i] != null)
-                    Destroy(Cart[i]);
             }
         }
 
@@ -164,6 +156,7 @@ namespace wearhouse.Control
                 }
             }
         }
+
         float xp = 0.2f;
         public void RemoveObject(Collider other)
         {
@@ -174,12 +167,11 @@ namespace wearhouse.Control
                 if (Cart.Count > 0)
                 {
                     CurrentLimit += Cart[Cart.Count - 1].GetComponent<controlObject>().objectHeight;
-                    Cart[Cart.Count - 1].transform.parent = null;
-                    Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition = other.transform.position;
-                    Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;
-                    Cart[Cart.Count - 1].GetComponent<controlObject>().isDestroy = true;
+                    Cart[Cart.Count - 1].transform.parent = other.transform;
+                    Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition = Vector3.zero;
+                    Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;                    
                     Cart.Remove(Cart[Cart.Count - 1]);
-                    xp = 0.2f;
+                    xp = 0.5f;
                 }
             }
             if (Cart.Count <= 0)
@@ -187,19 +179,22 @@ namespace wearhouse.Control
                 GoToDustbin = false;
             }
         }
+
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Pickup") && GetComponent<wearhouse.Move.moveBot>().agent.velocity.magnitude < 0.1f)
+            if (other.gameObject.CompareTag("Pickup") && GetComponent<warehouse.Move.moveBot>().agent.velocity.magnitude < 0.1f )
             {
-
-                AddObjectToCart(other);
+                if(other.gameObject.name != "Battery")
+                    AddObjectToCart(other);
             }
             if (other.gameObject.CompareTag("Dustbin") && GoToDustbin)
             {
                 isDustbin = true;
+                RemoveNullObjects();
                 RemoveObject(other);
             }
         }
+
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Battery"))

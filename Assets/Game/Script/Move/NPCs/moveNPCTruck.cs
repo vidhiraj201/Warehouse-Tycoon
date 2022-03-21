@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace wearhouse.Move
+namespace warehouse.Move
 {
     public class moveNPCTruck : MonoBehaviour
     {

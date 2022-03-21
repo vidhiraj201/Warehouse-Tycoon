@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlPlayerInventory : MonoBehaviour
     {
@@ -126,7 +126,7 @@ namespace wearhouse.Control
 
 
 
-        float xB = 0;
+        float xB = 0.5f;
         public void GiveBatteryToRobot(float ID, Collider collider, float BatteryStatus, float max)
         {
             if (xB > 0)
@@ -157,7 +157,7 @@ namespace wearhouse.Control
                              c[c.Count - 1].transform.parent = inventory;
                              c[c.Count - 1].transform.GetComponent<controlObject>().isMove = true;
                              c[c.Count - 1].transform.GetComponent<controlObject>().movementSpeed = G.GetComponent<controlLoadingDack>().ObjectMovementSpeed;*/
-                            xB = 0.5f;
+                            xB = 1.5f;
                             break;
                         }
                     }
@@ -167,7 +167,7 @@ namespace wearhouse.Control
            
         }
 
-        float xp = 0.2f;
+        float xp = 0.5f;
         public void RemoveObject(Collider other)
         {
             if (xp > 0)
@@ -177,24 +177,24 @@ namespace wearhouse.Control
                 if (Cart.Count > 0)
                 {
                     CurrentLimit += Cart[Cart.Count - 1].GetComponent<controlObject>().objectHeight;
-                    Cart[Cart.Count - 1].transform.parent = null;
-                    Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition = other.transform.position;
+                    Cart[Cart.Count - 1].transform.parent = other.transform;
+                    Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition = Vector3.zero;
                     Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;
-                    Cart[Cart.Count - 1].GetComponent<controlObject>().isDestroy = true;
+                   /* Cart[Cart.Count - 1].GetComponent<controlObject>().isDestroy = true;*/
                     Cart.Remove(Cart[Cart.Count - 1]);
-                    xp = 0.1f;
+                    xp = 0.5f;
                 }
             }
           
         }
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Pickup") && GetComponent<wearhouse.Move.movePlayer>().direction.magnitude<0.1f)
+            if (other.gameObject.CompareTag("Pickup") && GetComponent<warehouse.Move.movePlayer>().direction.magnitude<0.1f)
             {
                 
                 AddObjectToCart(other);
             }
-            if (other.gameObject.CompareTag("Dustbin") && GetComponent<wearhouse.Move.movePlayer>().direction.magnitude < 0.1f)
+            if (other.gameObject.CompareTag("Dustbin") && GetComponent<warehouse.Move.movePlayer>().direction.magnitude < 0.1f)
             {
                 RemoveObject(other);
             }

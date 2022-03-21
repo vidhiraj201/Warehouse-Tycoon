@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlParkingDack : MonoBehaviour
     {
@@ -10,7 +10,7 @@ namespace wearhouse.Control
         public bool isUp;
         public bool isOccupied;
         public GameObject NPCTruck;
-
+        public controlLoadingDack controlLoadingDack;
         public bool isLocked;
 
         private void Start()

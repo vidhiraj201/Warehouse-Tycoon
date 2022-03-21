@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace wearhouse.Core
+namespace warehouse.Core
 {
     public class coreA1 : MonoBehaviour
     {
         public List<GameObject> ParkingDacks = new List<GameObject>();
         public List<GameObject> controlParkingDacksUp = new List<GameObject>();
         public List<GameObject> controlParkingDacksDown = new List<GameObject>();
+
         public TextMeshProUGUI numberOfUnlockedLoadingDacks;
         public bool iRed;
         public bool iYellow;

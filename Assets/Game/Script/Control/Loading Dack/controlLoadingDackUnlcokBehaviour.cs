@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlLoadingDackUnlcokBehaviour : MonoBehaviour
     {

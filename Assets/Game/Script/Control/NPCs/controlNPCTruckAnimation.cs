@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlNPCTruckAnimation : MonoBehaviour
     {
@@ -125,6 +125,8 @@ namespace wearhouse.Control
         {            
             moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().isOccupied = false;
             moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().NPCTruck = null;
+            moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().controlLoadingDack.TargetTruck = null;           
+
             Destroy(moveNPCTruck.gameObject);
         }
     }

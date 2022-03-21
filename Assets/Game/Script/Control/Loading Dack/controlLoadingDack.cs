@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace wearhouse.Control
+namespace warehouse.Control
 {
     public class controlLoadingDack : MonoBehaviour
     {
@@ -30,7 +30,8 @@ namespace wearhouse.Control
         }
         void Update()
         {
-            getAccessToBot();            
+            if(!TradeCompleted)
+                getAccessToBot();            
             if (controlParkingDack.NPCTruck != null && controlParkingDack.NPCTruck.GetComponent<Move.moveNPCTruck>().isRechedOnParkingArea)
                 TargetTruck = controlParkingDack.NPCTruck;
 
@@ -129,6 +130,15 @@ namespace wearhouse.Control
             )
                 {
                     TradeCompleted = true;
+                    if (TargetedBot != null)
+                    {
+                        TargetedBot.transform.GetComponent<controlBotInvetory>().ClientNeedItem = -1;
+                        TargetedBot.transform.GetComponent<Move.moveBot>().isOccupied = false;
+                        TargetedBot.transform.GetComponent<Move.moveBot>().TargetToStore = null;
+                        TargetedBot.transform.GetComponent<Move.moveBot>().TargetToClient = null;
+                        TargetedBot = null;
+                    }
+                    
                 }
             }
             
@@ -278,22 +288,24 @@ namespace wearhouse.Control
 
         public void getAccessToBot()
         {
-            if (TargetTruck !=null && TargetedBot == null)
+            if(corePickupArea.bots.Count >= 1)
             {
-                if (corePickupArea.bots.Count > 0)
+                if (!corePickupArea.bots[corePickupArea.bots.Count - 1].GetComponent<Move.moveBot>().isOccupied && TargetTruck != null && TargetedBot == null)
                 {
                     TargetedBot = corePickupArea.bots[corePickupArea.bots.Count - 1];
                     TargetedBot.transform.GetComponent<Move.moveBot>().isOccupied = true;
-                    TargetedBot.transform.GetComponent<Move.moveBot>().TargetToClient = DroppingPosition;                    
+                    TargetedBot.transform.GetComponent<Move.moveBot>().TargetToClient = DroppingPosition;
                 }
-                               
             }
-            if(TargetedBot != null)
+            
+
+            if (TargetTruck!=null && TargetedBot != null)
                 setTargetStorePosition();
         }
         public void setTargetStorePosition()
         {
-            if(TargetTruck.GetComponent<controlNPCTruck>().nRed >= 1)
+            TargetedBot.transform.GetComponent<Move.moveBot>().isOccupied = true;
+            if (TargetTruck.GetComponent<controlNPCTruck>().nRed >= 1)
             {
                 TargetedBot.transform.GetComponent<Move.moveBot>().TargetToStore = corePickupArea.Red;
                 TargetedBot.transform.GetComponent<controlBotInvetory>().ClientNeedItem = 0;
@@ -327,7 +339,7 @@ namespace wearhouse.Control
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Player") && other.GetComponent<wearhouse.Move.movePlayer>().direction.magnitude < 0.1f)
+            if (other.gameObject.CompareTag("Player") && other.GetComponent<warehouse.Move.movePlayer>().direction.magnitude < 0.1f)
             {
                 isPlayerNear = true;
 
@@ -342,7 +354,7 @@ namespace wearhouse.Control
 
                 //AddObjectToCart(other);
             }
-            if (other.gameObject.CompareTag("Robot") && other.GetComponent<wearhouse.Move.moveBot>().agent.velocity.magnitude < 0.1f)
+            if (other.gameObject.CompareTag("Robot") && other.GetComponent<warehouse.Move.moveBot>().agent.velocity.magnitude < 0.1f)
             {
                 isRobotNear = true;
 
@@ -369,6 +381,9 @@ namespace wearhouse.Control
 
             if (isRobotNear)
                 isRobotNear = false;
+
+            if (controlBotInvetory != null)
+                controlBotInvetory = null;
         }
     }
 }

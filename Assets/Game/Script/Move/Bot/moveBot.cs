@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-namespace wearhouse.Move
+namespace warehouse.Move
 {
     public class moveBot : MonoBehaviour
     {
@@ -19,6 +19,7 @@ namespace wearhouse.Move
         public bool isWalkTowardClient = false;
         public bool isWalkTowardStore = false;
         public bool isWalkTowardDustbin = false;
+        public bool isWalkTowardInitalPosition = false;
 
         [Header("Health")]
         public float maxCharge;
@@ -47,13 +48,13 @@ namespace wearhouse.Move
         
         void Update()
         {
+            AddToList();
             HealthSlider.value = currentCharge;
             currentCharge = Mathf.Clamp(currentCharge, 0, maxCharge);
             //CheckForCart();
-            if (currentCharge > 0)
+            if (currentCharge > 0.1f)
             {
-                moveAndRotateTowardTarget();
-                AddToList();
+                moveAndRotateTowardTarget();                
                 if (isOccupied)
                     movementTowardsTarget();
                 if (!isOccupied)
@@ -64,13 +65,6 @@ namespace wearhouse.Move
                 currentCharge -= Time.deltaTime;
         }
 
-        void CheckForCart()
-        {
-            if (controlBotInvetory.Cart.Count > controlBotInvetory.CartLimit && agent.velocity.magnitude <0.1f)
-            {
-                print("Error");
-            }
-        }
         void moveAndRotateTowardTarget()
         {
             if(agent.velocity.magnitude > 0.1f)
@@ -83,24 +77,37 @@ namespace wearhouse.Move
 
         public void movementTowardsTarget()
         {
-            if (controlBotInvetory.Cart.Count <= controlBotInvetory.CartLimit && !isWalkTowardDustbin)
+            if (controlBotInvetory.Cart.Count <= controlBotInvetory.CartLimit && !isWalkTowardDustbin && controlBotInvetory.ClientNeedItem != -1)
             {
                 isWalkTowardStore = true;
                 isWalkTowardClient = false;
+                isWalkTowardInitalPosition = false;
             }
-            if (controlBotInvetory.Cart.Count >= controlBotInvetory.CartLimit && !isWalkTowardDustbin)
+            if (controlBotInvetory.Cart.Count >= controlBotInvetory.CartLimit && !isWalkTowardDustbin && controlBotInvetory.ClientNeedItem != -1)
             {
                 isWalkTowardStore = false;
                 isWalkTowardClient = true;
+                isWalkTowardInitalPosition = false;
             }
             if (controlBotInvetory.GoToDustbin)
             {
                 isWalkTowardDustbin = true;
                 isWalkTowardStore = false;
                 isWalkTowardClient = false;
+                isWalkTowardInitalPosition = false;
             }
             if(!controlBotInvetory.GoToDustbin)
+                isWalkTowardDustbin = false;     
+            
+            if(controlBotInvetory.ClientNeedItem == -1 && controlBotInvetory.Cart.Count <= 0 || !isOccupied)
+            {
                 isWalkTowardDustbin = false;
+                isWalkTowardStore = false;
+                isWalkTowardClient = false;
+                isWalkTowardInitalPosition = true;
+            }
+
+
 
             if (isWalkTowardClient)
                 agent.SetDestination(TargetToClient.position);
@@ -110,6 +117,8 @@ namespace wearhouse.Move
 
             if (isWalkTowardDustbin)
                 agent.SetDestination(GameObject.FindGameObjectWithTag("Dustbin").transform.position);
+            if (isWalkTowardInitalPosition)
+                agent.SetDestination(initPos);
         }
 
         public void AddToList()

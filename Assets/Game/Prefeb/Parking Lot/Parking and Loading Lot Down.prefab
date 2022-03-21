@@ -124,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983264549942251790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.81}
+  m_LocalPosition: {x: 0, y: 0, z: -1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6322660759342636991}
@@ -227,6 +227,7 @@ MonoBehaviour:
   TargetedBot: {fileID: 0}
   controlParkingDack: {fileID: 5263170265884415485}
   isPlayerNear: 0
+  isRobotNear: 0
   DroppingPosition: {fileID: 1987391293461185282}
   inventory: {fileID: 6322660758687724774}
   StartPosition: {x: -3, y: 0.4, z: 0}
@@ -235,6 +236,7 @@ MonoBehaviour:
   ObjectMovementSpeed: 30
   TradeCompleted: 0
   controlPlayerInventory: {fileID: 0}
+  controlBotInvetory: {fileID: 0}
 --- !u!114 &8196328204010972060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +401,7 @@ MonoBehaviour:
   isUp: 0
   isOccupied: 0
   NPCTruck: {fileID: 0}
+  controlLoadingDack: {fileID: 6322660759342636990}
   isLocked: 1
 --- !u!1 &6322660759739390383
 GameObject:
