@@ -14,7 +14,7 @@ namespace warehouse.Control
         public float amountReducer = 50;
         private Core.GameManager GameManager;
 
-        public bool isRecord;
+        //public bool isRecord;
 
         void Start()
         {

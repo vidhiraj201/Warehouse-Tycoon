@@ -6,9 +6,6 @@ namespace warehouse.Control
 {
     public class controlPlayerInventory : MonoBehaviour
     {
-
-
-        public GameObject[] Objects;
         public List<GameObject> Cart = new List<GameObject>();
         [SerializeField] private Vector3 StartPosition;
         public Transform cartTransform;
@@ -167,7 +164,7 @@ namespace warehouse.Control
            
         }
 
-        float xp = 0.5f;
+        float xp = 0.25f;
         public void RemoveObject(Collider other)
         {
             if (xp > 0)
@@ -182,7 +179,7 @@ namespace warehouse.Control
                     Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;
                    /* Cart[Cart.Count - 1].GetComponent<controlObject>().isDestroy = true;*/
                     Cart.Remove(Cart[Cart.Count - 1]);
-                    xp = 0.5f;
+                    xp = 0.25f;
                 }
             }
           

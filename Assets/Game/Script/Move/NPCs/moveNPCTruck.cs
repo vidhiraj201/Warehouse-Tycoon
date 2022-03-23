@@ -58,7 +58,7 @@ namespace warehouse.Move
             }
             if (tradeIsOver)
             {
-                StartCoroutine(AnimateLeaving(0.1f));
+                StartCoroutine(AnimateLeaving(1f));
             }
         }
         void Checking()

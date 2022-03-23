@@ -122,10 +122,10 @@ namespace warehouse.Control
         }
 
         public void TradeOver()
-        {            
+        {               
+            moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().controlLoadingDack.TargetTruck = null;
             moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().isOccupied = false;
             moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().NPCTruck = null;
-            moveNPCTruck.TargetObject.GetComponent<Control.controlParkingDack>().controlLoadingDack.TargetTruck = null;           
 
             Destroy(moveNPCTruck.gameObject);
         }

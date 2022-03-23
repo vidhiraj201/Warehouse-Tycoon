@@ -11,6 +11,7 @@ namespace warehouse.Control
         public bool isOccupied;
         public GameObject NPCTruck;
         public controlLoadingDack controlLoadingDack;
+        public controlLoadingDeckAnimation DeckAnimation;
         public bool isLocked;
 
         private void Start()
@@ -27,7 +28,13 @@ namespace warehouse.Control
                 {
                     coreA1.ParkingDacks.Add(this.gameObject);
                 }
-            }            
+            }   
+            
+            if(NPCTruck != null)
+            {
+                if(NPCTruck.GetComponent<Move.moveNPCTruck>().isRechedOnParkingArea)
+                    controlLoadingDack.TargetTruck = NPCTruck;
+            }
         }
 
         void addToList()

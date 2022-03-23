@@ -12,13 +12,13 @@ namespace warehouse.Control
         public Vector3 StartPosition;
         public int MaxCapacity;
         public int ID;
+        public bool isPlayerNear;
         public bool isLocked;
 
         private Core.coreA1 coreA1;
         private Move.movePlayer movePlayer;
 
         float x = 0.2f;
-        bool isPlayerNear;
         private void Start()
         {
             movePlayer = FindObjectOfType<Move.movePlayer>();
@@ -68,7 +68,7 @@ namespace warehouse.Control
                 obj.transform.localPosition = StartPosition;
                 return;
             }
-            if (Cart.Count > 0 && Cart.Count % 5 != 0 && Cart.Count % 15 != 0)
+            if (Cart.Count > 0 && Cart.Count % 5 != 0 && Cart.Count % 25 != 0)
             {
                 GameObject obj = Instantiate(Objects[x], inventory);
                 obj.transform.localPosition =
@@ -77,7 +77,7 @@ namespace warehouse.Control
                     Cart[Cart.Count - 1].transform.localPosition.z);
                 return;
             }
-            if (Cart.Count > 1 && Cart.Count % 5 == 0 && Cart.Count % 15 != 0)
+            if (Cart.Count > 1 && Cart.Count % 5 == 0 && Cart.Count % 25 != 0)
             {
                 GameObject obj = Instantiate(Objects[x], inventory);
                 obj.transform.localPosition =
@@ -86,7 +86,7 @@ namespace warehouse.Control
                     Cart[Cart.Count - 1].transform.localPosition.z -1);
                 return;
             }
-            if (Cart.Count > 1 && Cart.Count % 5 == 0 && Cart.Count % 15 == 0)
+            if (Cart.Count > 1 && Cart.Count % 5 == 0 && Cart.Count % 25 == 0)
             {
                 GameObject obj = Instantiate(Objects[x], inventory);
                 obj.transform.localPosition =
@@ -99,7 +99,7 @@ namespace warehouse.Control
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<Move.movePlayer>().direction.magnitude<0.1f)
             {
                 isPlayerNear = true;
             }

@@ -18,7 +18,8 @@ namespace warehouse.Control
         public Transform inventory;
         public Vector3 StartPosition;
         
-        public int StackingArray;
+        public int StackingArrayX;
+        public int StackingArrayCount;
         public float cartUpdateSpeed = 0.1f;
         public float ObjectMovementSpeed = 35;
 
@@ -30,52 +31,69 @@ namespace warehouse.Control
         }
         void Update()
         {
-            if(!TradeCompleted)
+            if(Cart.Count>0)
+                ArrangeObjectInCart();
+
+            if (!TradeCompleted)
                 getAccessToBot();            
-            if (controlParkingDack.NPCTruck != null && controlParkingDack.NPCTruck.GetComponent<Move.moveNPCTruck>().isRechedOnParkingArea)
-                TargetTruck = controlParkingDack.NPCTruck;
+/*            if (controlParkingDack.NPCTruck != null && controlParkingDack.NPCTruck.GetComponent<Move.moveNPCTruck>().isRechedOnParkingArea)
+                TargetTruck = controlParkingDack.NPCTruck;*/
 
             if(TargetTruck != null)
                 AddObjectToLoadingDack();
-            if (Cart.Count > 0)
-            {
-                RemoveAtNull();
-            }
+
+           /* if(Cart.Count>0)
+                RemoveAtNull();*/
         }
 
+        [SerializeField]int i = 0;
         void RemoveAtNull()
         {
-            for (int i = 0; i <= Cart.Count - 1; i++)
+            if(i<= Cart.Count - 1)
             {
                 if (Cart[i] == null)
+                {
                     Cart.Remove(Cart[i]);
+                    i++;
+                }
             }
+            if (i >= Cart.Count - 1)
+                i = 0;
         }
 
 
         public void ArrangeObjectInCart()
         {
-            if (Cart.Count == 1 && Cart.Count % StackingArray != 0)
+            if (Cart.Count <= 1 /*&& Cart.Count % StackingArrayX != 0 && Cart.Count % StackingArrayCount != 0*/)
             {
-                Cart[0].transform.GetComponent<controlObject>().EndPosition = StartPosition;
-
+                Cart[Cart.Count - 1].transform.GetComponent<controlObject>().EndPosition = StartPosition;
+                
                 return;
             }
-            if (Cart.Count >= 2 && Cart.Count % StackingArray != 0) 
+            if (Cart.Count > 1 && Cart.Count % StackingArrayX != 0 && Cart.Count % StackingArrayCount != 0) 
             {
                 Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition =
-                    new Vector3(Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.x + 1.25f,
+                    new Vector3(Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.x + 0.95f,
                     Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.y,
                     Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.z);
-
+                
                 return;
             }
-            if (Cart.Count >= 2 && Cart.Count % StackingArray == 0)
+            if (Cart.Count > 1 && Cart.Count % StackingArrayX == 0 && Cart.Count % StackingArrayCount != 0)
             {
                 Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition =
                     new Vector3(StartPosition.x,
-                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.y+1f,
-                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.z);
+                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.y,
+                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.z +0.95f);
+                
+                return;
+            }
+            if (Cart.Count > 1 && Cart.Count % StackingArrayX == 0 && Cart.Count % StackingArrayCount == 0)
+            {
+                Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition =
+                    new Vector3(StartPosition.x,
+                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.y + 1f,
+                    StartPosition.z);
                 
                 return;
             }
@@ -96,8 +114,9 @@ namespace warehouse.Control
                         Cart.Add(c.Cart[c.Cart.Count - 1]);
                         c.Cart.Remove(c.Cart[c.Cart.Count - 1]);                        
                         Cart[Cart.Count - 1].transform.parent = inventory;
-                        ArrangeObjectInCart();
+                        //ArrangeObjectInCart();
                         Cart[Cart.Count - 1].transform.GetComponent<controlObject>().isMove = true;
+                        /*Cart[Cart.Count - 1].transform.GetComponent<controlObject>().isOnInvetory = true;*/
                         Cart[Cart.Count - 1].transform.GetComponent<controlObject>().movementSpeed = ObjectMovementSpeed;
                         x = cartUpdateSpeed;
                         return;
@@ -130,6 +149,7 @@ namespace warehouse.Control
             )
                 {
                     TradeCompleted = true;
+//                    TargetTruck.GetComponent<controlNPCTruckPopup>().isTradeOver = true;
                     if (TargetedBot != null)
                     {
                         TargetedBot.transform.GetComponent<controlBotInvetory>().ClientNeedItem = -1;
@@ -246,9 +266,6 @@ namespace warehouse.Control
             {
                 if(Cart[i]!=null)
                     Destroy(Cart[i]);
-
-                if(Cart[i]==null)
-                    Cart.Remove(Cart[i]);
             }
         }
 

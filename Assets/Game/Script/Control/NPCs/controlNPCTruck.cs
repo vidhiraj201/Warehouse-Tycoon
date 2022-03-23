@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace warehouse.Control
@@ -11,6 +10,7 @@ namespace warehouse.Control
         private Core.coreA1 coreA1;
         [HideInInspector]public controlLoadingDack controlLoadingDack;
 
+        public GameObject HandUI;
         public GameObject Upgrade;
         public GameObject RequestUIGameObject;
 
@@ -52,31 +52,36 @@ namespace warehouse.Control
         void Update()
         {
             ShowUI();
-            LoadMiniGame();
+            /*if(controlLoadingDack !=null && controlLoadingDack.TradeCompleted  && !controlLoadingDack.GetComponent<controlLoadingDeckAnimation>().isProgressComplete*//*&& !GetComponent<controlNPCTruckPopup>().isCompleteTask*//*)
+                LoadMiniGame();*/
         }
 
+/*        public bool isUICome;
         public void LoadMiniGame()
         {
-            if(controlLoadingDack != null)
+            if (controlLoadingDack.isPlayerNear && !moveNPCTruck.tradeIsOver && !isUICome)
             {
-                if(controlLoadingDack.TradeCompleted && controlLoadingDack.isPlayerNear && !moveNPCTruck.tradeIsOver)
-                {
-                    if (!Upgrade.activeSelf)
-                        Upgrade.SetActive(true);
-                }
+                StartCoroutine(upgradeUIDelay(0.5f));
             }
+        }*/
+/*        IEnumerator upgradeUIDelay(float t)
+        {
+            yield return new WaitForSeconds(t);
+            Upgrade.SetActive(true);
+            isUICome = true;
         }
+        */
         public void CloseMiniGame()
         {
-            FindObjectOfType<Core.GameManager>().NumberOfTruckTraded += 1;
+            Upgrade.SetActive(false);
+            controlLoadingDack.GetComponent<controlLoadingDeckAnimation>().ResetData();
             controlLoadingDack.ResetLoadingDack();
+            controlLoadingDack.Cart.Clear();
+            FindObjectOfType<Core.GameManager>().currentTruckLoaded += 1;
             controlLoadingDack.TradeCompleted = false;
             moveNPCTruck.tradeIsOver = true;
-            if (Upgrade.activeSelf)
-            {                
-                Upgrade.GetComponent<Animator>().Play("Exit");
-            }
         }
+
         public void ShowUI()
         {
             if (controlNPCTruckAnimation.isRechedPlateform)
