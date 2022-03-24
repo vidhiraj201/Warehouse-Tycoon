@@ -23,7 +23,17 @@ namespace warehouse.Control
         
         void Update()
         {
-           
+          
+        }
+        void clear()
+        {
+            for(int i = 0; i <= Cart.Count - 1; i++)
+            {
+                if (Cart[i] == null)
+                {
+                    Cart.Remove(Cart[i]);
+                }
+            }
         }
 
         public void cartManagement()
@@ -114,7 +124,8 @@ namespace warehouse.Control
                         c[c.Count - 1].transform.GetComponent<controlObject>().isReched = false;                        
                         c[c.Count - 1].transform.parent = inventory;
                         c[c.Count - 1].transform.GetComponent<controlObject>().isMove = true;
-                        c[c.Count - 1].transform.GetComponent<controlObject>().movementSpeed = G.GetComponent<controlLoadingDack>().ObjectMovementSpeed;                        
+                        c[c.Count - 1].transform.GetComponent<controlObject>().movementSpeed = G.GetComponent<controlLoadingDack>().ObjectMovementSpeed;             
+                        clear();
                         break;
                     }
                 }
@@ -154,6 +165,7 @@ namespace warehouse.Control
                              c[c.Count - 1].transform.parent = inventory;
                              c[c.Count - 1].transform.GetComponent<controlObject>().isMove = true;
                              c[c.Count - 1].transform.GetComponent<controlObject>().movementSpeed = G.GetComponent<controlLoadingDack>().ObjectMovementSpeed;*/
+                            clear();
                             xB = 1.5f;
                             break;
                         }
@@ -176,9 +188,9 @@ namespace warehouse.Control
                     CurrentLimit += Cart[Cart.Count - 1].GetComponent<controlObject>().objectHeight;
                     Cart[Cart.Count - 1].transform.parent = other.transform;
                     Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition = Vector3.zero;
-                    Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;
-                   /* Cart[Cart.Count - 1].GetComponent<controlObject>().isDestroy = true;*/
+                    Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;                   
                     Cart.Remove(Cart[Cart.Count - 1]);
+                    clear();
                     xp = 0.25f;
                 }
             }
@@ -190,10 +202,12 @@ namespace warehouse.Control
             {
                 
                 AddObjectToCart(other);
+                
             }
             if (other.gameObject.CompareTag("Dustbin") && GetComponent<warehouse.Move.movePlayer>().direction.magnitude < 0.1f)
             {
                 RemoveObject(other);
+                
             }
             if (other.gameObject.CompareTag("Robot"))
             {

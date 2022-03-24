@@ -24,7 +24,7 @@ namespace warehouse.Move
         [Header("Health")]
         public float maxCharge;
         public float currentCharge;
-
+        public float DischargeSpeed = 2;
         public float rotationSmooth;
         public bool isOccupied;
 
@@ -62,7 +62,7 @@ namespace warehouse.Move
             }
 
             if (agent.velocity.magnitude > 0.2f && currentCharge >= 0)
-                currentCharge -= Time.deltaTime;
+                currentCharge -= DischargeSpeed;
         }
 
         void moveAndRotateTowardTarget()

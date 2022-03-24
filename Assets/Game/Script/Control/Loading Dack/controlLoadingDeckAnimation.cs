@@ -48,7 +48,7 @@ namespace warehouse.Control
 
             Progress.transform.forward = Camera.main.transform.forward;
 
-            if (!isCameraActivated && controlLoadingDack.TradeCompleted && controlLoadingDack.isPlayerNear)
+            if (controlLoadingDack.isPlayerNear && !isCameraActivated && controlLoadingDack.TradeCompleted )
             {                        
                 cinemachineVirtual.m_Follow = CameraFocusTarget;
                 Joystick = GameObject.Find("Floating Joystick");
@@ -109,7 +109,7 @@ namespace warehouse.Control
             
             RotatingObjectStack.localRotation = Quaternion.Euler(RotatingObjectStack.localEulerAngles.x, x, RotatingObjectStack.localEulerAngles .z);
             curVal = x / 360;
-            if (controlLoadingDack.TradeCompleted && Input.GetMouseButton(0))
+            if (controlLoadingDack.isPlayerNear && controlLoadingDack.TradeCompleted && Input.GetMouseButton(0))
             {
                 controlLoadingDack.TargetTruck.GetComponent<controlNPCTruck>().HandUI.SetActive(false);                
                 Tape.gameObject.SetActive(true);
