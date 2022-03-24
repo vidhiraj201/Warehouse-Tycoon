@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace warehouse.Control
 {
@@ -15,6 +17,10 @@ namespace warehouse.Control
         public int ID;
         public bool isPlayerNear;
         public bool isLocked;
+        public bool isBought;
+        [Header("Refealing UI")]
+        [Space(20)]
+        public GameObject UI;
 
         private Core.coreA1 coreA1;
         private Move.movePlayer movePlayer;
@@ -22,6 +28,8 @@ namespace warehouse.Control
         float x = 0.2f;
         private void Start()
         {
+            if(UI != null)
+                UI.SetActive(false);
             currentCapacity = MaxCapacity;
             movePlayer = FindObjectOfType<Move.movePlayer>();
             coreA1 = FindObjectOfType<Core.coreA1>();
@@ -29,7 +37,18 @@ namespace warehouse.Control
         void Update()
         {
             addRemoveFromList();
-            if (Cart.Count <= MaxCapacity && currentCapacity > 0 && !isPlayerNear && !isLocked)
+            if (Cart.Count <= MaxCapacity && currentCapacity > 0 && !isLocked && !isPlayerNear && !isBought)
+            {
+                if (x > 0)
+                    x -= Time.deltaTime;
+                if (x <= 0)
+                {
+                    SpwanObjects();
+                    currentCapacity -= 1;
+                    x = 0.05f;
+                }
+            }
+            if(Cart.Count <= MaxCapacity && currentCapacity > 0 && !isLocked && isBought)
             {
                 if (x > 0)
                     x -= Time.deltaTime;
@@ -46,8 +65,22 @@ namespace warehouse.Control
                 if (!Cart.Contains(T.gameObject))
                     Cart.Add(T.gameObject);
             }
+            UIUpdate();
         }
 
+        void UIUpdate()
+        {
+            if(currentCapacity <=0 && Cart.Count <= 0 && isPlayerNear && UI !=null)
+            {
+                UI.SetActive(true);
+            }
+        }
+        public void Refil()
+        {
+            currentCapacity = MaxCapacity;
+            isBought = true;
+            UI.SetActive(false);
+        }
         void addRemoveFromList()
         {
             if (!isLocked)
@@ -112,6 +145,8 @@ namespace warehouse.Control
             if (other.gameObject.CompareTag("Player"))
             {
                 isPlayerNear = false;
+                if (isBought)
+                    isBought = false;
             }
         }
     }

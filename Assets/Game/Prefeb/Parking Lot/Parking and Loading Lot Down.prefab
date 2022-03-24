@@ -503,8 +503,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14.971558, y: 0.3, z: 6.8740025}
-  m_Center: {x: 0.011769295, y: 0, z: -0.57000446}
+  m_Size: {x: 14.971558, y: 0.3, z: 10.100681}
+  m_Center: {x: 0.011769295, y: 0, z: -2.183344}
 --- !u!114 &6322660759342636990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
   isOccupied: 0
   NPCTruck: {fileID: 0}
   controlLoadingDack: {fileID: 6322660759342636990}
-  DeckAnimation: {fileID: 0}
+  DeckAnimation: {fileID: 444115283884882922}
   isLocked: 1
 --- !u!1 &6322660759739390383
 GameObject:

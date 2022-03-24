@@ -28,7 +28,7 @@ namespace warehouse.Move
         public float rotationSmooth;
         public bool isOccupied;
 
-        [HideInInspector] public Vector3 initPos;
+       public Vector3 initPos;
 
         private float turnSmoothVelocity;
         private Core.corePickupArea corePickupArea;

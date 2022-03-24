@@ -12,6 +12,7 @@ namespace warehouse.Core
         public GameObject Ground, PickupArea, ParkingDeck, wallSet;
         public TextMeshProUGUI LevelUnlockText;
         public string LevelUnlockPrintText;
+        public string Camera;
         public int UnlockLevelVal;
         public float DelayInUnlock;
         public bool isUnlocked;
@@ -39,7 +40,7 @@ namespace warehouse.Core
         }
         IEnumerator UnlockLevel(float t)
         {
-            cam.Play("T1");
+            cam.Play(Camera);
             yield return new WaitForSeconds(t);
             Ground.SetActive(true);
             PickupArea.SetActive(true);
