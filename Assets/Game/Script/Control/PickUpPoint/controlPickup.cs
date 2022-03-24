@@ -11,6 +11,7 @@ namespace warehouse.Control
         public Transform inventory;
         public Vector3 StartPosition;
         public int MaxCapacity;
+        public int currentCapacity;
         public int ID;
         public bool isPlayerNear;
         public bool isLocked;
@@ -21,20 +22,22 @@ namespace warehouse.Control
         float x = 0.2f;
         private void Start()
         {
+            currentCapacity = MaxCapacity;
             movePlayer = FindObjectOfType<Move.movePlayer>();
             coreA1 = FindObjectOfType<Core.coreA1>();
         }
         void Update()
         {
             addRemoveFromList();
-            if (Cart.Count <= MaxCapacity && !isPlayerNear && !isLocked)
+            if (Cart.Count <= MaxCapacity && currentCapacity > 0 && !isPlayerNear && !isLocked)
             {
                 if (x > 0)
                     x -= Time.deltaTime;
                 if (x <= 0)
                 {
                     SpwanObjects();
-                    x = 0.2f;
+                    currentCapacity -= 1;
+                    x = 0.05f;
                 }
             }
 
@@ -68,7 +71,7 @@ namespace warehouse.Control
                 obj.transform.localPosition = StartPosition;
                 return;
             }
-            if (Cart.Count > 0 && Cart.Count % 5 != 0 && Cart.Count % 25 != 0)
+            if (Cart.Count > 0 && Cart.Count % 7 != 0 && Cart.Count % 49 != 0)
             {
                 GameObject obj = Instantiate(Objects[x], inventory);
                 obj.transform.localPosition =
@@ -77,7 +80,7 @@ namespace warehouse.Control
                     Cart[Cart.Count - 1].transform.localPosition.z);
                 return;
             }
-            if (Cart.Count > 1 && Cart.Count % 5 == 0 && Cart.Count % 25 != 0)
+            if (Cart.Count > 1 && Cart.Count % 7 == 0 && Cart.Count % 49 != 0)
             {
                 GameObject obj = Instantiate(Objects[x], inventory);
                 obj.transform.localPosition =
@@ -86,7 +89,7 @@ namespace warehouse.Control
                     Cart[Cart.Count - 1].transform.localPosition.z -1);
                 return;
             }
-            if (Cart.Count > 1 && Cart.Count % 5 == 0 && Cart.Count % 25 == 0)
+            if (Cart.Count > 1 && Cart.Count % 7 == 0 && Cart.Count % 49 == 0)
             {
                 GameObject obj = Instantiate(Objects[x], inventory);
                 obj.transform.localPosition =
