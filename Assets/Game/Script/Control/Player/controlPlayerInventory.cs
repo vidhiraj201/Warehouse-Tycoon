@@ -198,7 +198,7 @@ namespace warehouse.Control
         }
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Pickup") && GetComponent<warehouse.Move.movePlayer>().direction.magnitude<0.1f)
+            if (other.gameObject.CompareTag("Pickup") && GetComponent<warehouse.Move.movePlayer>().direction.magnitude<0.1f && !other.gameObject.GetComponent<controlPickup>().isBought)
             {
                 
                 AddObjectToCart(other);
