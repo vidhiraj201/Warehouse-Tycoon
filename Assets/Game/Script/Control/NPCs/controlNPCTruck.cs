@@ -7,7 +7,7 @@ namespace warehouse.Control
     {
         private Move.moveNPCTruck moveNPCTruck;
         private controlNPCTruckAnimation controlNPCTruckAnimation;
-        private Core.coreA1 coreA1;
+        private Core.coreManager coreA1;
         [HideInInspector]public controlLoadingDack controlLoadingDack;
 
         public GameObject HandUI;
@@ -44,7 +44,7 @@ namespace warehouse.Control
                 RequestUIGameObject.SetActive(false);
 
             controlNPCTruckAnimation = transform.GetChild(0).GetComponent<controlNPCTruckAnimation>();
-            coreA1 = FindObjectOfType<Core.coreA1>();
+            coreA1 = FindObjectOfType<Core.coreManager>();
             RequestGenrator();
         }
 

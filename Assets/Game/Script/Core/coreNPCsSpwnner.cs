@@ -6,7 +6,7 @@ namespace warehouse.Core
 {
     public class coreNPCsSpwnner : MonoBehaviour
     {
-        private coreA1 coreA1;
+        private coreManager coreA1;
         public GameObject[] NPCs;
 
         public Transform upSpwnner;
@@ -18,7 +18,7 @@ namespace warehouse.Core
 
         private void Start()
         {
-            coreA1 = FindObjectOfType<coreA1>();
+            coreA1 = FindObjectOfType<coreManager>();
             x = y = 0;
         }
         void Update()

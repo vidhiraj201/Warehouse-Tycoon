@@ -6,7 +6,7 @@ namespace warehouse.Control
 {
     public class controlParkingDack : MonoBehaviour
     {
-        private Core.coreA1 coreA1;
+        private Core.coreManager coreA1;
         public bool isUp;
         public bool isOccupied;
         public GameObject NPCTruck;
@@ -16,7 +16,7 @@ namespace warehouse.Control
 
         private void Start()
         {
-            coreA1 = FindObjectOfType<Core.coreA1>();
+            coreA1 = FindObjectOfType<Core.coreManager>();
         }
         void Update()
         {

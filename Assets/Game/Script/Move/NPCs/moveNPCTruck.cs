@@ -7,7 +7,7 @@ namespace warehouse.Move
 {
     public class moveNPCTruck : MonoBehaviour
     {
-        private Core.coreA1 coreA1;
+        private Core.coreManager coreA1;
         public GameObject TargetObject;
 
         public NavMeshAgent NPCAgent;
@@ -31,7 +31,7 @@ namespace warehouse.Move
         void Start()
         {
             NPCAgent = GetComponent<NavMeshAgent>();
-            coreA1 = FindObjectOfType<Core.coreA1>();
+            coreA1 = FindObjectOfType<Core.coreManager>();
             
         }
         

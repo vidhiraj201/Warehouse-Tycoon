@@ -22,7 +22,7 @@ namespace warehouse.Control
         [Space(20)]
         public GameObject UI;
 
-        private Core.coreA1 coreA1;
+        private Core.coreManager coreA1;
         private Move.movePlayer movePlayer;
 
         float x = 0.2f;
@@ -32,7 +32,7 @@ namespace warehouse.Control
                 UI.SetActive(false);
             currentCapacity = MaxCapacity;
             movePlayer = FindObjectOfType<Move.movePlayer>();
-            coreA1 = FindObjectOfType<Core.coreA1>();
+            coreA1 = FindObjectOfType<Core.coreManager>();
         }
         void Update()
         {

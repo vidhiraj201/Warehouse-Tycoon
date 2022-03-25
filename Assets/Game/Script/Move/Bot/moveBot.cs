@@ -14,6 +14,7 @@ namespace warehouse.Move
         [Header("Target Position")]
         public Transform TargetToClient;
         public Transform TargetToStore;
+        public Transform TargetToCharger;
 
         [Header("Where to go")]
         public bool isWalkTowardClient = false;
@@ -33,7 +34,7 @@ namespace warehouse.Move
         private float turnSmoothVelocity;
         private Core.corePickupArea corePickupArea;
         private Control.controlBotInvetory controlBotInvetory;
-
+        private Core.coreChargingPortManager chargerCollection;
 
 
         void Start()
@@ -41,18 +42,23 @@ namespace warehouse.Move
             currentCharge = maxCharge;
             initPos = transform.position;
             corePickupArea = FindObjectOfType<Core.corePickupArea>();
+            chargerCollection = FindObjectOfType<Core.coreChargingPortManager>();
             controlBotInvetory = GetComponent<Control.controlBotInvetory>();
             HealthSlider.maxValue = maxCharge;
         }
 
+        [SerializeField]float BrakeCharger;
         
         void Update()
         {
+            BrakeCharger = maxCharge * 25 * 0.01f;
+
+
             AddToList();
             HealthSlider.value = currentCharge;
             currentCharge = Mathf.Clamp(currentCharge, 0, maxCharge);
             //CheckForCart();
-            if (currentCharge > 0.1f)
+            if (currentCharge > BrakeCharger && TargetToCharger == null)
             {
                 moveAndRotateTowardTarget();                
                 if (isOccupied)
@@ -60,6 +66,10 @@ namespace warehouse.Move
                 if (!isOccupied)
                     agent.SetDestination(initPos);
             }
+            getCharagerLocation();
+
+            if (currentCharge <= 0)
+                agent.isStopped = true;
 
             if (agent.velocity.magnitude > 0.2f && currentCharge >= 0)
                 currentCharge -= DischargeSpeed;
@@ -75,6 +85,23 @@ namespace warehouse.Move
             }
         }
 
+        void getCharagerLocation()
+        {
+            if(currentCharge < BrakeCharger && TargetToCharger == null && chargerCollection.Charger.Count > 0)
+            {
+                TargetToCharger = chargerCollection.Charger[chargerCollection.Charger.Count - 1].transform;
+                TargetToCharger.GetComponent<Control.controlCharger>().isOccupied = true;
+            }
+            if (TargetToCharger != null && currentCharge < BrakeCharger)
+            {                
+                agent.SetDestination(TargetToCharger.position);
+            }
+            if(currentCharge >= maxCharge && TargetToCharger != null)
+            {
+                TargetToCharger.GetComponent<Control.controlCharger>().isOccupied = false;
+                TargetToCharger = null;
+            }
+        }
         public void movementTowardsTarget()
         {
             if (controlBotInvetory.Cart.Count <= controlBotInvetory.CartLimit && !isWalkTowardDustbin && controlBotInvetory.ClientNeedItem != -1)
