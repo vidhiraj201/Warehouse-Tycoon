@@ -13,8 +13,8 @@ namespace warehouse.Core
         public TextMeshProUGUI money;
         private float currentMoney;
 
-        [Space(40)]
         [Header("Truck UI")]
+        [Space(20)]
         public float maxTruckToLoad;
         public float currentTruckLoaded;
         public float tempCurrentTruckLoaded;
@@ -33,6 +33,11 @@ namespace warehouse.Core
 
         [Header("Level Manager")]
         public GameObject UpgradeButton;
+
+        [Header("Color")]
+        [Space(10)]
+        public Color cointInPositive;
+        public Color cointInNegative;
 
 
         void Start()
@@ -53,7 +58,7 @@ namespace warehouse.Core
 
         public void moneyCount()
         {
-            maxMoney = (int)Mathf.Clamp(maxMoney, 0, Mathf.Infinity);
+            /*maxMoney = (int)Mathf.Clamp(maxMoney, 0, Mathf.Infinity);*/
             if (currentMoney <= maxMoney)
             {
                 currentMoney += moneyCounterSpeed * Time.deltaTime;
@@ -67,6 +72,12 @@ namespace warehouse.Core
                     currentMoney = maxMoney;
             }
             money.text = "$" + currentMoney.ToString("N0");
+
+            if (currentMoney < 0)
+                money.color = cointInNegative;
+
+            if (currentMoney > 0)
+                money.color = cointInPositive;
         }
         public void UIUpdates()
         {
