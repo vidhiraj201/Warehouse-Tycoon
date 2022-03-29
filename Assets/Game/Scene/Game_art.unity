@@ -13207,7 +13207,7 @@ MonoBehaviour:
   upSpwnner: {fileID: 1069337172}
   downSpwnner: {fileID: 1670613600}
   Parant: {fileID: 422964024}
-  SpwanTime: 3
+  SpwanTime: 4
 --- !u!1 &424866195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16470,8 +16470,8 @@ MonoBehaviour:
   DSpeed: 100
   Uspeed: 10
   UpgradeButton: {fileID: 9167003758680782842}
-  cointInPositive: {r: 0, g: 0, b: 0, a: 0}
-  cointInNegative: {r: 0, g: 0, b: 0, a: 0}
+  cointInPositive: {r: 1, g: 1, b: 1, a: 1}
+  cointInNegative: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &533088054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21591,6 +21591,10 @@ PrefabInstance:
       propertyPath: cinemachineVirtual
       value: 
       objectReference: {fileID: 1691003336}
+    - target: {fileID: 5263170265884415485, guid: 58d5bfcdbec16e248b10ada37898048f, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6322660759448181352, guid: 58d5bfcdbec16e248b10ada37898048f, type: 3}
       propertyPath: m_Name
       value: Parking and Loading Lot Down
@@ -57088,6 +57092,10 @@ PrefabInstance:
       propertyPath: cinemachineVirtual
       value: 
       objectReference: {fileID: 1691003336}
+    - target: {fileID: 5263170265884415485, guid: 58d5bfcdbec16e248b10ada37898048f, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6322660759448181352, guid: 58d5bfcdbec16e248b10ada37898048f, type: 3}
       propertyPath: m_Name
       value: Parking and Loading Lot Down
