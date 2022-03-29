@@ -12,6 +12,8 @@ namespace warehouse.Control
         public bool isRechedPlateform = false;
         public controlNPCTruck controlNPCTruck;
         public Move.moveNPCTruck moveNPCTruck;
+        public Transform cashSpwnner;
+        public GameObject Cash;
 
         public Image iRed;
         public Image iYellow;
@@ -116,9 +118,16 @@ namespace warehouse.Control
             }
         }
 
+        bool spwanCash;
         public void AddMoneyToBank()
         {
-            FindObjectOfType<Core.GameManager>().maxMoney += 200;
+            if (!spwanCash)
+            {
+                Instantiate(Cash, cashSpwnner.position, Quaternion.identity);
+                spwanCash = true;
+            }
+            /*FindObjectOfType<Core.GameManager>().maxMoney += 200;*/
+            
         }
 
         public void TradeOver()

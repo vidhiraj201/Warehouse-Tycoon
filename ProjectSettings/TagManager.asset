@@ -12,6 +12,8 @@ TagManager:
   - Robot
   - Dustbin
   - Battery
+  - Coin
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - Player
   - Wall
   - Robot
-  - 
-  - 
+  - Coin
+  - Coin Collector
   - 
   - 
   - 

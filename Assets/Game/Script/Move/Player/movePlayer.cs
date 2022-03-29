@@ -27,14 +27,15 @@ namespace warehouse.Move
 
         void Update()
         {
+            MovePlayer();
 
         }
-        private void FixedUpdate()
+   /*     private void FixedUpdate()
         {
             MovePlayer();
 
-            //Gravity();
-        }
+            //Gravity();            
+        }*/
 
         [HideInInspector] public Vector3 direction;
         public void MovePlayer()
