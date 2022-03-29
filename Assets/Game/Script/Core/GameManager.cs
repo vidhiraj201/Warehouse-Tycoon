@@ -39,6 +39,17 @@ namespace warehouse.Core
         public Color cointInPositive;
         public Color cointInNegative;
 
+        [Header("Reward")]
+        [Space(15)]
+        public GameObject LockedSection;
+        public int RewardMoney;
+
+        [Header("Costings")]
+        [Space(10)]
+        public int ParkingLot = 500;
+        public int Bots = 1500;
+        public int ChargindStation = 3000;
+        public int RefillingCost = 500;
 
         void Start()
         {
@@ -124,6 +135,14 @@ namespace warehouse.Core
             {
                 UpgradeButton.SetActive(truckCount);
             }
+            if(currentLevel == 4 || currentLevel == 9)
+            {
+                LockedSection.SetActive(true);
+            }
+            else
+            {
+                LockedSection.SetActive(false);
+            }
         }
 
         int truckCountData;
@@ -131,37 +150,120 @@ namespace warehouse.Core
         {
             if (currentLevel == 0)
                 truckCountData = 2;
+
             if (currentLevel == 1)
-                truckCountData = 4;
+                truckCountData = 2;
+
             if (currentLevel == 2)
-                truckCountData = 6;
+                truckCountData = 4;
+
             if (currentLevel == 3)
                 truckCountData = 8;
             if (currentLevel == 4)
-                truckCountData = 7;
-            if (currentLevel == 5)
-                truckCountData = 3;
-            if (currentLevel == 6)
-                truckCountData = 8;
-            if (currentLevel == 7)
-                truckCountData = 9;
-            if (currentLevel == 8)
-                truckCountData = 10;
-            if (currentLevel == 9)
-                truckCountData = 11;
-            if (currentLevel == 10)
                 truckCountData = 12;
-            if (currentLevel >= 11)
-                truckCountData = Random.Range(7, 15);
 
+            if (currentLevel == 5)
+                truckCountData = 16;
+
+            if (currentLevel == 6)
+                truckCountData = 20;
+
+            if (currentLevel == 7)
+                truckCountData = 24;
+
+            if (currentLevel == 8)
+                truckCountData = 28;
+
+            if (currentLevel == 9)
+                truckCountData = 32;
+
+            if (currentLevel == 10)
+                truckCountData = 36;
+
+            if (currentLevel == 11)
+                truckCountData = 40;
+
+            if (currentLevel == 12)
+                truckCountData = 44;
+
+            if (currentLevel == 13)
+                truckCountData = 48;
+
+            if (currentLevel == 14)
+                truckCountData = 52;
+
+            if (currentLevel == 15)
+                truckCountData = 56;
+
+            if (currentLevel >= 16)
+                truckCountData = Random.Range(56, 80);
             return truckCountData;
         }
         public void UpgradeLevel()
         {
+            addReward();
             currentLevel += 1;
             currentTruckLoaded -= maxTruckToLoad;
             maxTruckToLoad = MaxCustomerCount();
             UpgradeButton.SetActive(false);
+        }
+
+        public void addReward()
+        {
+            maxMoney += Reward();
+        }
+
+        public int Reward()
+        {
+            if (currentLevel == 0)
+                RewardMoney = 100;
+
+            if (currentLevel == 1)
+                RewardMoney = 0;
+
+            if (currentLevel == 2)
+                RewardMoney = 250;
+
+            if (currentLevel == 3)
+                RewardMoney = 0;
+
+            if (currentLevel == 4)
+                RewardMoney = 0;
+
+            if (currentLevel == 5)
+                RewardMoney = 1000;
+
+            if (currentLevel == 6)
+                RewardMoney = 0;
+
+            if (currentLevel == 7)
+                RewardMoney = 1500;
+
+            if (currentLevel == 8)
+                RewardMoney = 2000;
+
+            if (currentLevel == 9)
+                RewardMoney = 0;
+
+            if (currentLevel == 10)
+                RewardMoney = 3000;
+
+            if (currentLevel == 11)
+                RewardMoney = 3500;
+
+            if (currentLevel == 12)
+                RewardMoney = 5000;
+
+            if (currentLevel == 13)
+                RewardMoney = 6000;
+
+            if (currentLevel == 14)
+                RewardMoney = 6500;
+
+            if (currentLevel == 15)
+                RewardMoney = 7000;
+
+            return RewardMoney;
         }
     }
 

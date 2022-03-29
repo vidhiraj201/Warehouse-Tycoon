@@ -32,7 +32,8 @@ namespace warehouse.Move
         private void FixedUpdate()
         {
             MovePlayer();
-            Gravity();
+
+            //Gravity();
         }
 
         [HideInInspector] public Vector3 direction;

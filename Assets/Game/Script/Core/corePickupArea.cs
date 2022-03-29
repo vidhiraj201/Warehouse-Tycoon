@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace warehouse.Core
 {
@@ -8,6 +9,8 @@ namespace warehouse.Core
     {
 
         public List<GameObject> bots = new List<GameObject>();
+        public List<GameObject> RobotCount = new List<GameObject>();
+        public TextMeshProUGUI BotCount;
 
         [Space(40)]
         public Transform Red;
@@ -27,7 +30,7 @@ namespace warehouse.Core
 
         void Update()
         {
-
+            BotCount.text = RobotCount.Count.ToString("N0");
         }
     }
 }

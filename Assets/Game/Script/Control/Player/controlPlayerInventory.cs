@@ -176,7 +176,7 @@ namespace warehouse.Control
            
         }
 
-        float xp = 0.25f;
+        float xp = 0.125f;
         public void RemoveObject(Collider other)
         {
             if (xp > 0)
@@ -191,7 +191,7 @@ namespace warehouse.Control
                     Cart[Cart.Count - 1].GetComponent<controlObject>().isMove = true;                   
                     Cart.Remove(Cart[Cart.Count - 1]);
                     clear();
-                    xp = 0.25f;
+                    xp = 0.125f;
                 }
             }
           

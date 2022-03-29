@@ -118,7 +118,7 @@ namespace warehouse.Control
 
         public void AddMoneyToBank()
         {
-            FindObjectOfType<Core.GameManager>().maxMoney += 50;
+            FindObjectOfType<Core.GameManager>().maxMoney += 200;
         }
 
         public void TradeOver()

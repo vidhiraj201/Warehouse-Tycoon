@@ -23,6 +23,7 @@ namespace warehouse.Control
         public GameObject UI;
 
         private Core.coreManager coreA1;
+        private Core.GameManager gm;
         private Move.movePlayer movePlayer;
 
         float x = 0.2f;
@@ -33,6 +34,7 @@ namespace warehouse.Control
             currentCapacity = MaxCapacity;
             movePlayer = FindObjectOfType<Move.movePlayer>();
             coreA1 = FindObjectOfType<Core.coreManager>();
+            gm = FindObjectOfType<Core.GameManager>();
         }
         void Update()
         {
@@ -77,6 +79,8 @@ namespace warehouse.Control
         }
         public void Refil()
         {
+            gm.maxMoney -= gm.RefillingCost;
+            gm.RefillingCost += 100;
             currentCapacity = MaxCapacity;
             isBought = true;
             UI.SetActive(false);

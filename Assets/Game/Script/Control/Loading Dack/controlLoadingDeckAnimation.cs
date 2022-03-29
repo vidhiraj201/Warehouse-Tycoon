@@ -129,7 +129,7 @@ namespace warehouse.Control
         {
             Progress.maxValue = maxVal;
             Progress.value = curVal;
-            Tape.localScale = new Vector3(Tape.localScale.x, (x * 0.007f), Tape.localScale.z);
+            Tape.localScale = new Vector3(Tape.localScale.x, (x * 0.009f), Tape.localScale.z);
         }
 
         public void ResetData()

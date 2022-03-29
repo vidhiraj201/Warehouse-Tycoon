@@ -10,7 +10,7 @@ namespace warehouse.Control
         public controlParkingDack controlParkingDack;
         public controlLoadingDack controlLoadingDack;
         public TextMeshProUGUI money;
-        public float maxMoneyNeedToUnlock = 100;
+        private float maxMoneyNeedToUnlock = 100;
         public float amountReducer = 50;
         private Core.GameManager GameManager;
 
@@ -21,14 +21,19 @@ namespace warehouse.Control
             GameManager = FindObjectOfType<Core.GameManager>();
         }
 
+        public bool isReducing;
         // Update is called once per frame
         void Update()
         {
+            if (controlParkingDack.isLocked && !controlLoadingDack.isPlayerNear && !isReducing)
+                maxMoneyNeedToUnlock = GameManager.ParkingLot;
+
             money.text = "$" + maxMoneyNeedToUnlock.ToString();
-            if (maxMoneyNeedToUnlock <= 0)
+            if (controlParkingDack.isLocked && maxMoneyNeedToUnlock <= 0)
             {
                 controlParkingDack.isLocked = false;
                 money.gameObject.SetActive(false);
+                GameManager.ParkingLot += 100;
             }
 
             if(!controlParkingDack.isLocked)
@@ -42,6 +47,7 @@ namespace warehouse.Control
         {            
             if(maxMoneyNeedToUnlock > 0 && GameManager.maxMoney> 0)
             {
+                isReducing = true;
                 maxMoneyNeedToUnlock -= amountReducer;
                 GameManager.maxMoney -= amountReducer;
             }

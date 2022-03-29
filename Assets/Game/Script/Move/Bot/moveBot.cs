@@ -44,7 +44,9 @@ namespace warehouse.Move
             corePickupArea = FindObjectOfType<Core.corePickupArea>();
             chargerCollection = FindObjectOfType<Core.coreChargingPortManager>();
             controlBotInvetory = GetComponent<Control.controlBotInvetory>();
+            if (!corePickupArea.RobotCount.Contains(this.gameObject)) corePickupArea.RobotCount.Add(this.gameObject);
             HealthSlider.maxValue = maxCharge;
+
         }
 
         [SerializeField]float BrakeCharger;

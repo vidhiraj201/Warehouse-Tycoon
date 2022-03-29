@@ -9,7 +9,7 @@ namespace warehouse.Core
     {
         public Animator cam;
 
-        public GameObject Ground, PickupArea, ParkingDeck, wallSet;
+        public GameObject Ground/*, PickupArea, ParkingDeck, wallSet*/;
         public TextMeshProUGUI LevelUnlockText;
         public string LevelUnlockPrintText;
         public string Camera;
@@ -32,9 +32,9 @@ namespace warehouse.Core
             if (isUnlocked)
             {
                 Ground.SetActive(true);
-                PickupArea.SetActive(true);
+               /* PickupArea.SetActive(true);
                 ParkingDeck.SetActive(true);
-                wallSet.SetActive(true);
+                wallSet.SetActive(true);*/
                 this.gameObject.SetActive(false);
             }
         }
@@ -43,9 +43,9 @@ namespace warehouse.Core
             cam.Play(Camera);
             yield return new WaitForSeconds(t);
             Ground.SetActive(true);
-            PickupArea.SetActive(true);
+            /*PickupArea.SetActive(true);
             ParkingDeck.SetActive(true);
-            wallSet.SetActive(true);
+            wallSet.SetActive(true);*/
             this.gameObject.SetActive(false);
         }        
     }
