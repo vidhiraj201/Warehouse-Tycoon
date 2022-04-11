@@ -536,7 +536,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 5.5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 20
@@ -624,7 +624,7 @@ MonoBehaviour:
   cartTransform: {fileID: 489068529355909478}
   GoToDustbin: 0
   BatteryID: 6
-  CartLimit: 10
+  CartLimit: 5
   CurrentLimit: 0
   cartUpdateSpeed: 0.15
   ClientNeedItem: 0
