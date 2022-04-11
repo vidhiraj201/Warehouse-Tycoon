@@ -7,6 +7,11 @@ namespace warehouse.Control
 {
     public class controlLoadingDackUnlcokBehaviour : MonoBehaviour
     {
+        [Header("Plateform Color")]
+        public Material Locked;
+        public Material Unlocked;
+        public GameObject Plateform;
+
         public controlParkingDack controlParkingDack;
         public controlLoadingDack controlLoadingDack;
         public TextMeshProUGUI money;
@@ -41,6 +46,12 @@ namespace warehouse.Control
 
             if (controlParkingDack.isLocked && controlLoadingDack.isPlayerNear)
                 moneyChecker();
+
+            if (controlParkingDack.isLocked)
+                Plateform.GetComponent<MeshRenderer>().material = Locked;
+
+            if (!controlParkingDack.isLocked)
+                Plateform.GetComponent<MeshRenderer>().material = Unlocked;
         }
 
         public void moneyChecker()
