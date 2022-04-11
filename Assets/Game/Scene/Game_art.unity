@@ -19117,6 +19117,10 @@ PrefabInstance:
       value: -4.2991624
       objectReference: {fileID: 0}
     - target: {fileID: -3480699329000672020, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3480699329000672020, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -2.1747217
       objectReference: {fileID: 0}
@@ -19409,6 +19413,10 @@ PrefabInstance:
       value: 17.917795
       objectReference: {fileID: 0}
     - target: {fileID: 2559285840627121667, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559285840627121667, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -25.707506
       objectReference: {fileID: 0}
@@ -19649,6 +19657,10 @@ PrefabInstance:
       value: 0.00000031114647
       objectReference: {fileID: 0}
     - target: {fileID: 8169382868667117632, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8169382868667117632, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 1.1936235
       objectReference: {fileID: 0}
@@ -19703,30 +19715,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
   m_PrefabInstance: {fileID: 463773943}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &463773945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c7f3a58dba4ae904c8108ed6da88b930, type: 3}
-  m_PrefabInstance: {fileID: 463773943}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &463773946
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463773945}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b7f6dea987e91144b1ad7ef03cf3c7c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &464967458
 Mesh:
   m_ObjectHideFlags: 0
@@ -21856,7 +21844,7 @@ MonoBehaviour:
   UpgradeButton: {fileID: 9167003758680782842}
   cointInPositive: {r: 1, g: 1, b: 1, a: 1}
   cointInNegative: {r: 1, g: 0, b: 0, a: 1}
-  LockedSection: {fileID: 0}
+  LockedSection: {fileID: 9167003759386373851}
   RewardMoney: 0
   ParkingLot: 500
   Bots: 1500
@@ -61674,7 +61662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70392fbc45a91a4bb9ab999d8cbec20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animation: {fileID: 463773946}
+  Animation: {fileID: 0}
 --- !u!65 &1521121022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79071,7 +79059,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1575487093}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1922221639
 BoxCollider:
