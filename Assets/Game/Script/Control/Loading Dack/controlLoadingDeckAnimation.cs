@@ -53,7 +53,8 @@ namespace warehouse.Control
                 cinemachineVirtual.m_Follow = CameraFocusTarget;
                 Joystick = GameObject.Find("Floating Joystick");
                 Joystick.GetComponent<Image>().raycastTarget = false;
-                StartCoroutine(StartMiniGame(.5f));
+                StartCoroutine(StartMiniGame(0.5f));
+                StartCoroutine(startProcess(1.5f));
                 isCameraActivated = true;
             }
 
@@ -71,11 +72,9 @@ namespace warehouse.Control
                     Joystick = null;
                 }
                 
-            }
-                
-
-
-            progress();
+            }       
+            if(StartPtocessing)
+                progress();
             if (curVal >= maxVal && !isProgressComplete)
             {
                 loadItem.Play("Invetory");
@@ -83,6 +82,13 @@ namespace warehouse.Control
                 isProgressComplete = true;
             }
            
+        }
+
+        public bool StartPtocessing;
+        IEnumerator startProcess(float t)
+        {
+            yield return new WaitForSeconds(t);
+            StartPtocessing = true;
         }
 
         IEnumerator StartMiniGame(float t)
@@ -138,9 +144,11 @@ namespace warehouse.Control
             RotatingObjectStack.localRotation = Quaternion.identity;
             Tape.gameObject.SetActive(false);
             Progress.gameObject.SetActive(false);
+            curVal = 0;
             x = 0;
-            isProgressComplete = false;
             isCameraActivated = false;
+            StartPtocessing = false;
+            isProgressComplete = false;
             Joystick.SetActive(true);
 
         }

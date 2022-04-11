@@ -9,8 +9,7 @@ namespace warehouse.Core
     {
 
         public List<GameObject> bots = new List<GameObject>();
-        public List<GameObject> RobotCount = new List<GameObject>();
-        public TextMeshProUGUI BotCount;
+        public List<GameObject> RobotCount = new List<GameObject>();        
 
         [Space(40)]
         public Transform Red;
@@ -30,7 +29,6 @@ namespace warehouse.Core
 
         void Update()
         {
-            BotCount.text = RobotCount.Count.ToString("N0");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace warehouse.Move
         void Update()
         {
             MovePlayer();
-
+            transform.position = new Vector3(transform.position.x, 0.15f, transform.position.z);
         }
    /*     private void FixedUpdate()
         {

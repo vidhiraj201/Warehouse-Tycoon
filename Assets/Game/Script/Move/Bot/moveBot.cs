@@ -15,12 +15,15 @@ namespace warehouse.Move
         public Transform TargetToClient;
         public Transform TargetToStore;
         public Transform TargetToCharger;
+        public Transform TargetToInitPosition;
+        public Transform TargetToDustbin;
 
         [Header("Where to go")]
         public bool isWalkTowardClient = false;
         public bool isWalkTowardStore = false;
         public bool isWalkTowardDustbin = false;
         public bool isWalkTowardInitalPosition = false;
+        private bool wayToCharge = false;
 
         [Header("Health")]
         public float maxCharge;
@@ -29,20 +32,19 @@ namespace warehouse.Move
         public float rotationSmooth;
         public bool isOccupied;
 
-       public Vector3 initPos;
 
         private float turnSmoothVelocity;
         private Core.corePickupArea corePickupArea;
+        private Core.GameManager GameManager;
         private Control.controlBotInvetory controlBotInvetory;
-        private Core.coreChargingPortManager chargerCollection;
+        [HideInInspector]public Core.coreChargingPortManager chargerCollection;
 
 
         void Start()
         {
             currentCharge = maxCharge;
-            initPos = transform.position;
             corePickupArea = FindObjectOfType<Core.corePickupArea>();
-            chargerCollection = FindObjectOfType<Core.coreChargingPortManager>();
+            GameManager = FindObjectOfType<Core.GameManager>();
             controlBotInvetory = GetComponent<Control.controlBotInvetory>();
             if (!corePickupArea.RobotCount.Contains(this.gameObject)) corePickupArea.RobotCount.Add(this.gameObject);
             HealthSlider.maxValue = maxCharge;
@@ -60,18 +62,23 @@ namespace warehouse.Move
             HealthSlider.value = currentCharge;
             currentCharge = Mathf.Clamp(currentCharge, 0, maxCharge);
             //CheckForCart();
-            if (currentCharge > BrakeCharger && TargetToCharger == null)
+            if (currentCharge > BrakeCharger || TargetToCharger == null)
             {
-                moveAndRotateTowardTarget();                
-                if (isOccupied)
-                    movementTowardsTarget();
-                if (!isOccupied)
-                    agent.SetDestination(initPos);
+                if (!wayToCharge)
+                {
+                    moveAndRotateTowardTarget();
+                    if (isOccupied)
+                        movementTowardsTarget();
+                    if (!isOccupied)
+                        agent.SetDestination(TargetToInitPosition.position);
+                }                
             }
             getCharagerLocation();
 
             if (currentCharge <= 0)
                 agent.isStopped = true;
+            if (currentCharge > 0)
+                agent.isStopped = false;
 
             if (agent.velocity.magnitude > 0.2f && currentCharge >= 0)
                 currentCharge -= DischargeSpeed;
@@ -91,17 +98,23 @@ namespace warehouse.Move
         {
             if(currentCharge < BrakeCharger && TargetToCharger == null && chargerCollection.Charger.Count > 0)
             {
+                
                 TargetToCharger = chargerCollection.Charger[chargerCollection.Charger.Count - 1].transform;
                 TargetToCharger.GetComponent<Control.controlCharger>().isOccupied = true;
             }
             if (TargetToCharger != null && currentCharge < BrakeCharger)
-            {                
+            {
+                wayToCharge = true;
                 agent.SetDestination(TargetToCharger.position);
             }
             if(currentCharge >= maxCharge && TargetToCharger != null)
             {
                 TargetToCharger.GetComponent<Control.controlCharger>().isOccupied = false;
                 TargetToCharger = null;
+            }
+            if(currentCharge >= (maxCharge*70*0.01) && wayToCharge)
+            {
+                wayToCharge = false;
             }
         }
         public void movementTowardsTarget()
@@ -145,9 +158,9 @@ namespace warehouse.Move
                 agent.SetDestination(TargetToStore.position);
 
             if (isWalkTowardDustbin)
-                agent.SetDestination(GameObject.FindGameObjectWithTag("Dustbin").transform.position);
+                agent.SetDestination(TargetToDustbin.position);
             if (isWalkTowardInitalPosition)
-                agent.SetDestination(initPos);
+                agent.SetDestination(TargetToInitPosition.position);
         }
 
         public void AddToList()

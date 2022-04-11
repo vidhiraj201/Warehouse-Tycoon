@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 namespace warehouse.Control
@@ -21,6 +22,7 @@ namespace warehouse.Control
         [Header("Refealing UI")]
         [Space(20)]
         public GameObject UI;
+        public TextMeshProUGUI Price;
 
         private Core.coreManager coreA1;
         private Core.GameManager gm;
@@ -38,6 +40,8 @@ namespace warehouse.Control
         }
         void Update()
         {
+            Price.text = "$"+gm.RefillingCost.ToString("N0");
+            
             addRemoveFromList();
             if (Cart.Count <= MaxCapacity && currentCapacity > 0 && !isLocked && !isPlayerNear && !isBought)
             {
@@ -70,11 +74,13 @@ namespace warehouse.Control
             UIUpdate();
         }
 
+        bool UION;
         void UIUpdate()
         {
-            if(currentCapacity <=0 && Cart.Count <= 0 && isPlayerNear && UI !=null)
+            if(currentCapacity <=0 && Cart.Count <= 0 && isPlayerNear && UI !=null && !UION)
             {
                 UI.SetActive(true);
+                UION = true;
             }
         }
         public void Refil()
@@ -83,6 +89,10 @@ namespace warehouse.Control
             gm.RefillingCost += 100;
             currentCapacity = MaxCapacity;
             isBought = true;
+            UI.SetActive(false);
+        }
+        public void RemoveUI()
+        {
             UI.SetActive(false);
         }
         void addRemoveFromList()
@@ -151,6 +161,8 @@ namespace warehouse.Control
                 isPlayerNear = false;
                 if (isBought)
                     isBought = false;
+                if (UION)
+                    UION = false;
             }
         }
     }

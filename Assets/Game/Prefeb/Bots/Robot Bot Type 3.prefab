@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 489068528944532963}
   - component: {fileID: 489068528944532965}
   m_Layer: 0
-  m_Name: Robot Bot
+  m_Name: Robot Bot Type 3
   m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,7 +539,7 @@ NavMeshAgent:
   m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 20
+  m_AngularSpeed: 2000
   m_StoppingDistance: 4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -594,6 +594,7 @@ MonoBehaviour:
   TargetToClient: {fileID: 0}
   TargetToStore: {fileID: 0}
   TargetToCharger: {fileID: 0}
+  TargetToInitPosition: {fileID: 0}
   isWalkTowardClient: 0
   isWalkTowardStore: 0
   isWalkTowardDustbin: 0
@@ -603,7 +604,6 @@ MonoBehaviour:
   DischargeSpeed: 0.005
   rotationSmooth: 0
   isOccupied: 0
-  initPos: {x: 0, y: 0, z: 0}
   BrakeCharger: 0
 --- !u!114 &489068528944532963
 MonoBehaviour:
@@ -764,7 +764,7 @@ PrefabInstance:
     - target: {fileID: 3618721768830759904, guid: 694b2708d1bf4af448c4126618e762a3, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 13ef448a3b42ceb4d80f56199163a097, type: 2}
+      objectReference: {fileID: 2100000, guid: f40cccb2253313440a7f561a31b6e8fc, type: 2}
     - target: {fileID: 8469343074013695849, guid: 694b2708d1bf4af448c4126618e762a3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

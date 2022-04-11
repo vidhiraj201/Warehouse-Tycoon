@@ -8,6 +8,7 @@ namespace warehouse.Control
     {
         public int Level;
         private Core.GameManager GameManager;
+
         public GameObject UnlockableObject;
 
         public controlPickup controlPickup;
