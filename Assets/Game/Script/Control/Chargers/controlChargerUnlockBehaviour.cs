@@ -33,14 +33,14 @@ namespace warehouse.Control
         void Update()
         {
             if (isLocked && !isPlayerNear && !isReducing)
-                maxMoneyNeedToUnlock = GameManager.ChargindStation;
+                maxMoneyNeedToUnlock = GameManager.ChargingStation;
             Money.text = "$" + maxMoneyNeedToUnlock.ToString("N0");
             if(isLocked&&maxMoneyNeedToUnlock<=0)
             {
                 Locked.SetActive(false);
                 unLocked.SetActive(true);
                 Collider.enabled = false;
-                GameManager.ChargindStation += 600;
+                GameManager.ChargingStation += 600;
 
                 if (unlockOverLevel)
                     unlockOverLevel = false;
@@ -54,7 +54,7 @@ namespace warehouse.Control
                 Locked.SetActive(false);
                 unLocked.SetActive(true);
                 Collider.enabled = false;
-                GameManager.ChargindStation += 600;
+                GameManager.ChargingStation += 600;
                 unlockOverLevel = false;
                 isLocked = false;
             }

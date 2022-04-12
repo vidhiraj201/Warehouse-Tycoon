@@ -113,6 +113,7 @@ namespace warehouse.Control
                                 c.Cart.Remove(c.Cart[c.Cart.Count - 1]);
                                 CurrentLimit -= Cart[Cart.Count - 1].GetComponent<controlObject>().objectHeight;
                                 ArrangeObjectInCart();
+                                c.MaxCapacity--;
                                 x = cartUpdateSpeed;
                             }
 

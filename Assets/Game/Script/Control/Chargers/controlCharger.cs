@@ -62,14 +62,14 @@ namespace warehouse.Control
         void unlockSystem()
         {
             if (isLocked && !isPlayerNear && !isReducing)
-                maxMoneyNeedToUnlock = GameManager.ChargindStation;
+                maxMoneyNeedToUnlock = GameManager.ChargingStation;
             money.text = "$" + maxMoneyNeedToUnlock.ToString();
 
             if (isLocked && maxMoneyNeedToUnlock <= 0)
             {
                 isLocked = false;
                 money.gameObject.SetActive(false);
-                GameManager.ChargindStation += 1500;
+                GameManager.ChargingStation += 1500;
             }
 
             if (!isLocked)

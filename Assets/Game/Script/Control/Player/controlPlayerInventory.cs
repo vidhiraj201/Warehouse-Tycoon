@@ -87,7 +87,8 @@ namespace warehouse.Control
                                 Cart[Cart.Count - 1].transform.parent = cartTransform;
                                 c.Cart.Remove(c.Cart[c.Cart.Count - 1]);
                                 CurrentLimit -= Cart[Cart.Count - 1].GetComponent<controlObject>().objectHeight;
-                                ArrangeObjectInCart();                                
+                                ArrangeObjectInCart();
+                                c.MaxCapacity --;
                                 x = cartUpdateSpeed;
                             }
 

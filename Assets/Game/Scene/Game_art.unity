@@ -4507,6 +4507,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f885d9c22ed80164e98c39fc13da50df, type: 3}
   m_PrefabInstance: {fileID: 109205100}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &111622566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 600714477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &112622109
 GameObject:
   m_ObjectHideFlags: 0
@@ -5513,6 +5524,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122517193}
   m_CullTransparentMesh: 1
+--- !u!114 &126047083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 44017128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &127241172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6029,6 +6051,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4641061628593674349, guid: bb6b121b83d6a564f833eb5a938b5f5d, type: 3}
   m_PrefabInstance: {fileID: 4641061628473210701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &149255179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 1783906109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &151947454
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,6 +6778,7 @@ MonoBehaviour:
   inventory: {fileID: 1039211608}
   StartPosition: {x: 2.15, y: 0.4, z: 0}
   MaxCapacity: 5
+  FullCapacity: 5
   currentCapacity: 0
   ID: 0
   isPlayerNear: 0
@@ -7696,8 +7730,8 @@ MonoBehaviour:
   Yellow: {fileID: 379569683}
   Green: {fileID: 1985339141}
   Blue: {fileID: 1637355607}
-  Orange: {fileID: 0}
-  Violet: {fileID: 0}
+  Orange: {fileID: 739582118}
+  Violet: {fileID: 498401276}
 --- !u!114 &185066808 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
@@ -9165,6 +9199,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e83fa6e52f205b4992fbe21302d8c27, type: 3}
   m_PrefabInstance: {fileID: 234104689}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &235377039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 2840782446166284327}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &243370334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1092408308860062549, guid: 7fd863c4321a6eb4faa23c24981d07eb, type: 3}
@@ -10894,6 +10939,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 74f4d5f8e2009b84b84e435fe03bc719, type: 3}
   m_PrefabInstance: {fileID: 291963260}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &295744228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 1507364388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &296635694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10965,6 +11021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298323950}
+  - component: {fileID: 298323951}
   m_Layer: 0
   m_Name: Scene 1
   m_TagString: Untagged
@@ -10995,6 +11052,43 @@ Transform:
   m_Father: {fileID: 508357228}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &298323951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298323949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb9379e69b66244b8bfd51db1ab3faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlParking1: {fileID: 235377039}
+  controlParking2: {fileID: 1747958446}
+  controlParking3: {fileID: 1055069071}
+  controlCharger1: {fileID: 1257864123}
+  controlCharger2: {fileID: 1272918656}
+  controlCharger3: {fileID: 759003530}
+  controlCharger4: {fileID: 460797386}
+  controlPickupRed: {fileID: 1487557236}
+  controlPickupYellow: {fileID: 1366276847}
+  controlPickupBattery: {fileID: 164159093}
+  robotSpwanner1: {fileID: 1937282223}
+  robotSpwanner2: {fileID: 1339601639}
+  data:
+    pLock1: 0
+    pLock2: 1
+    pLock3: 1
+    cCharger1: 1
+    cCharger2: 1
+    cCharger3: 1
+    cCharger4: 1
+    RedMaxCapacity: 147
+    YellowMaxCapacity: 147
+    BatteryMaxCapacity: 5
+    RoboSpwannedInRobo1: 0
+    RoboSpwannedInRobo2: 0
 --- !u!1001 &299748534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17283,6 +17377,17 @@ Transform:
   m_Father: {fileID: 382442639}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &450457487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 878213159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &451281420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17701,6 +17806,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456857436}
   m_CullTransparentMesh: 1
+--- !u!114 &459593486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 1026277262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &460797386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 1469304934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &461106891
 Mesh:
   m_ObjectHideFlags: 0
@@ -17941,7 +18068,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 461624138}
-  - component: {fileID: 461624139}
   m_Layer: 0
   m_Name: Parking Area_Level03
   m_TagString: Untagged
@@ -17965,28 +18091,6 @@ Transform:
   m_Father: {fileID: 963066031}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &461624139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461624137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6243e33e4fd82440b5b8f5ca0dcfaef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParkingDacks: []
-  controlParkingDacksUp: []
-  controlParkingDacksDown: []
-  numberOfUnlockedLoadingDacks: {fileID: 1694046564}
-  iRed: 0
-  iYellow: 0
-  iGreen: 0
-  iBlue: 0
-  iOrange: 0
-  iViolet: 0
 --- !u!1001 &463773943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19425,7 +19529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 498401276}
   m_Layer: 0
-  m_Name: Yellow Pickup Point
+  m_Name: Violet Pickup Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20337,6 +20441,8 @@ GameObject:
   - component: {fileID: 516565258}
   - component: {fileID: 516565259}
   - component: {fileID: 516565260}
+  - component: {fileID: 516565261}
+  - component: {fileID: 516565262}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -20376,7 +20482,7 @@ MonoBehaviour:
   maxTruckToLoad: 10
   currentTruckLoaded: 0
   tempCurrentTruckLoaded: 0
-  currentLevel: 9
+  currentLevel: 0
   truckCountUpdate: {fileID: 9167003759999369386}
   nextLevelText: {fileID: 9167003759239992929}
   currentLevelText: {fileID: 9167003759182757946}
@@ -20390,7 +20496,7 @@ MonoBehaviour:
   RewardMoney: 0
   ParkingLot: 500
   Bots: 1500
-  ChargindStation: 3000
+  ChargingStation: 3000
   RefillingCost: 500
 --- !u!114 &516565260
 MonoBehaviour:
@@ -20411,6 +20517,48 @@ MonoBehaviour:
   controlPickup: {fileID: 0}
   controlCharger: {fileID: 0}
   RobotSpwanner: {fileID: 0}
+--- !u!114 &516565261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516565257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119a47eaee55bc44c866c2789d3982da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 516565259}
+  sectionUnlocker1: {fileID: 1569533186}
+  sectionUnlocker2: {fileID: 1301358587}
+  data:
+    level: 0
+    cash: 0
+    truckServed: 0
+    parkingLot: 500
+    Bots: 1500
+    chargingStation: 3000
+    refillingCost: 500
+    isSection1: 0
+    isSection2: 0
+--- !u!114 &516565262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516565257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5b2d4ab89c09647bc2b2aa56e91826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xCounter: 1
+  uSLData: {fileID: 516565261}
+  aSLData: {fileID: 298323951}
+  bSLData: {fileID: 0}
+  cSLData: {fileID: 0}
 --- !u!1001 &520569847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27470,6 +27618,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5993795, y: 0.19374654, z: 4.011142}
   m_Center: {x: -0.69176304, y: 0, z: -6.9831505}
+--- !u!114 &718924355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 1227484485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &719707073
 GameObject:
   m_ObjectHideFlags: 0
@@ -28082,7 +28241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739582118}
   m_Layer: 0
-  m_Name: Red Pickup Point
+  m_Name: Orange Pickup Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29028,6 +29187,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757657196}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &759003530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 538690180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &761786033
 GameObject:
   m_ObjectHideFlags: 0
@@ -33802,6 +33972,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &875671684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 1406347214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &878213159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34205,6 +34386,7 @@ MonoBehaviour:
   inventory: {fileID: 1226941466}
   StartPosition: {x: 2.15, y: 0.4, z: 0}
   MaxCapacity: 5
+  FullCapacity: 147
   currentCapacity: 0
   ID: 0
   isPlayerNear: 0
@@ -36936,6 +37118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963066031}
+  - component: {fileID: 963066032}
   m_Layer: 0
   m_Name: Scene 3
   m_TagString: Untagged
@@ -36964,6 +37147,43 @@ Transform:
   m_Father: {fileID: 508357228}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963066032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963066030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e020f775b8ee3a54abf5bb879856cdba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlParking1: {fileID: 295744228}
+  controlParking2: {fileID: 1036906972}
+  controlParking3: {fileID: 149255179}
+  controlCharger1: {fileID: 965575202}
+  controlCharger2: {fileID: 126047083}
+  controlCharger3: {fileID: 718924355}
+  controlCharger4: {fileID: 459593486}
+  controlPickupOrange: {fileID: 1588323027}
+  controlPickupViolet: {fileID: 1181502390}
+  controlPickupBattery: {fileID: 1350848543}
+  robotSpwanner1: {fileID: 80253784}
+  robotSpwanner2: {fileID: 81010564}
+  data:
+    pLock1: 1
+    pLock2: 1
+    pLock3: 1
+    cCharger1: 1
+    cCharger2: 1
+    cCharger3: 1
+    cCharger4: 1
+    RedMaxCapacity: 147
+    YellowMaxCapacity: 147
+    BatteryMaxCapacity: 5
+    RoboSpwannedInRobo1: 0
+    RoboSpwannedInRobo2: 0
 --- !u!4 &963674847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: 7fd863c4321a6eb4faa23c24981d07eb, type: 3}
@@ -37047,6 +37267,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 333081a8bf114cf4eb21cc278feca868, type: 3}
   m_PrefabInstance: {fileID: 965053485}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &965575202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 905677350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966671568
 GameObject:
   m_ObjectHideFlags: 0
@@ -39149,6 +39380,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1036906972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 1922026663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1037236612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40064,6 +40306,17 @@ Transform:
   m_Father: {fileID: 1366276845}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1055069071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 737315002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1055552678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43845,6 +44098,7 @@ MonoBehaviour:
   inventory: {fileID: 1255158890}
   StartPosition: {x: 0, y: 0.4, z: 2.5}
   MaxCapacity: 147
+  FullCapacity: 147
   currentCapacity: 0
   ID: 5
   isPlayerNear: 0
@@ -47659,6 +47913,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 74f4d5f8e2009b84b84e435fe03bc719, type: 3}
   m_PrefabInstance: {fileID: 1255928567}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1257864123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 4267732793019352774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1258245400
 GameObject:
   m_ObjectHideFlags: 0
@@ -48526,6 +48791,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1072d8ccb684b2439d22200ad47eb12, type: 3}
   m_PrefabInstance: {fileID: 1272796103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1272918656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 1115330162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276492021
 GameObject:
   m_ObjectHideFlags: 0
@@ -50815,6 +51091,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325616416}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1326459008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 1665333726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1326491203
 GameObject:
   m_ObjectHideFlags: 0
@@ -52002,6 +52289,7 @@ MonoBehaviour:
   inventory: {fileID: 1107590391}
   StartPosition: {x: 2.15, y: 0.4, z: 0}
   MaxCapacity: 5
+  FullCapacity: 147
   currentCapacity: 0
   ID: 0
   isPlayerNear: 0
@@ -52487,6 +52775,7 @@ MonoBehaviour:
   inventory: {fileID: 53629146}
   StartPosition: {x: 0, y: 0.4, z: 2.5}
   MaxCapacity: 147
+  FullCapacity: 147
   currentCapacity: 0
   ID: 1
   isPlayerNear: 0
@@ -54062,6 +54351,7 @@ MonoBehaviour:
   inventory: {fileID: 25346597}
   StartPosition: {x: 0, y: 0.4, z: 2.5}
   MaxCapacity: 147
+  FullCapacity: 147
   currentCapacity: 0
   ID: 2
   isPlayerNear: 0
@@ -56643,6 +56933,7 @@ MonoBehaviour:
   inventory: {fileID: 1168423315}
   StartPosition: {x: 0, y: 0.4, z: 2.5}
   MaxCapacity: 147
+  FullCapacity: 147
   currentCapacity: 0
   ID: 0
   isPlayerNear: 0
@@ -56886,6 +57177,7 @@ MonoBehaviour:
   inventory: {fileID: 575798220}
   StartPosition: {x: 0, y: 0.4, z: 2.5}
   MaxCapacity: 147
+  FullCapacity: 147
   currentCapacity: 0
   ID: 3
   isPlayerNear: 0
@@ -56922,6 +57214,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.2446785, y: 0.3, z: 9}
   m_Center: {x: 0.25488567, y: 0, z: -6.9430444e-17}
+--- !u!114 &1490920697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 1342339630}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494090475
 GameObject:
   m_ObjectHideFlags: 0
@@ -60580,6 +60883,7 @@ MonoBehaviour:
   inventory: {fileID: 1936301624}
   StartPosition: {x: 0, y: 0.4, z: 2.5}
   MaxCapacity: 147
+  FullCapacity: 147
   currentCapacity: 0
   ID: 4
   isPlayerNear: 0
@@ -64731,6 +65035,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4267732793433797641, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
   m_PrefabInstance: {fileID: 1665333726}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1665349031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 1965840607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1670058843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67057,6 +67372,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740283612}
   m_CullTransparentMesh: 1
+--- !u!114 &1747958446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+  m_PrefabInstance: {fileID: 647498889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac9729eb4728746a80069973ebda79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748655965
 GameObject:
   m_ObjectHideFlags: 0
@@ -71043,7 +71369,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840496508}
-  - component: {fileID: 1840496509}
   m_Layer: 0
   m_Name: Parking Area_Level02
   m_TagString: Untagged
@@ -71066,28 +71391,6 @@ Transform:
   m_Father: {fileID: 2053878024}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1840496509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840496507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6243e33e4fd82440b5b8f5ca0dcfaef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParkingDacks: []
-  controlParkingDacksUp: []
-  controlParkingDacksDown: []
-  numberOfUnlockedLoadingDacks: {fileID: 1694046564}
-  iRed: 0
-  iYellow: 0
-  iGreen: 0
-  iBlue: 0
-  iOrange: 0
-  iViolet: 0
 --- !u!1 &1840974025
 GameObject:
   m_ObjectHideFlags: 0
@@ -75215,6 +75518,17 @@ Transform:
   m_Father: {fileID: 1180891231}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1952490799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+  m_PrefabInstance: {fileID: 340308357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1952843562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79266,6 +79580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053878024}
+  - component: {fileID: 2053878025}
   m_Layer: 0
   m_Name: Scene 2
   m_TagString: Untagged
@@ -79295,6 +79610,43 @@ Transform:
   m_Father: {fileID: 508357228}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053878025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053878023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc86c8da9e0c0a4f9d9dc2ebc1ca879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlParking1: {fileID: 111622566}
+  controlParking2: {fileID: 1665349031}
+  controlParking3: {fileID: 1490920697}
+  controlCharger1: {fileID: 875671684}
+  controlCharger2: {fileID: 1326459008}
+  controlCharger3: {fileID: 450457487}
+  controlCharger4: {fileID: 1952490799}
+  controlPickupGreen: {fileID: 1413471387}
+  controlPickupBlue: {fileID: 1490341809}
+  controlPickupBattery: {fileID: 891755295}
+  robotSpwanner1: {fileID: 716611526}
+  robotSpwanner2: {fileID: 512848092}
+  data:
+    pLock1: 1
+    pLock2: 1
+    pLock3: 1
+    cCharger1: 1
+    cCharger2: 1
+    cCharger3: 1
+    cCharger4: 1
+    RedMaxCapacity: 147
+    YellowMaxCapacity: 147
+    BatteryMaxCapacity: 5
+    RoboSpwannedInRobo1: 0
+    RoboSpwannedInRobo2: 0
 --- !u!1 &2053982822
 GameObject:
   m_ObjectHideFlags: 0
@@ -84040,6 +84392,10 @@ PrefabInstance:
     - target: {fileID: 4267732793433797641, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
+      propertyPath: isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4267732793451770278, guid: d5aea35acb922c14cb72c7a57e8cee13, type: 3}
       propertyPath: PortManager

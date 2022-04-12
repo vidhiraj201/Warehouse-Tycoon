@@ -14,6 +14,7 @@ namespace warehouse.Control
         public Transform inventory;
         public Vector3 StartPosition;
         public int MaxCapacity;
+        public int FullCapacity = 147;
         public int currentCapacity;
         public int ID;
         public bool isPlayerNear;
@@ -87,7 +88,8 @@ namespace warehouse.Control
         {
             gm.maxMoney -= gm.RefillingCost;
             gm.RefillingCost += 100;
-            currentCapacity = MaxCapacity;
+            currentCapacity = FullCapacity;
+            MaxCapacity = FullCapacity;
             isBought = true;
             UI.SetActive(false);
         }

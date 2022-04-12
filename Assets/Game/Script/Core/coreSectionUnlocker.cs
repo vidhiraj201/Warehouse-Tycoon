@@ -45,6 +45,7 @@ namespace warehouse.Core
             yield return new WaitForSeconds(t);
             Ground.SetActive(true);
             this.gameObject.SetActive(false);
+            isUnlocked = true;
             /*PickupArea.SetActive(true);
             ParkingDeck.SetActive(true);
             wallSet.SetActive(true);*/

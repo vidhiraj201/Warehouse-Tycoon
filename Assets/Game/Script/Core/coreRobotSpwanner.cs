@@ -25,6 +25,8 @@ namespace warehouse.Core
         {
             HireUI.SetActive(false);
             gameManager = FindObjectOfType<warehouse.Core.GameManager>();
+            if(HireCount!=0)
+                hire();
         }
 
         // Update is called once per frame
@@ -37,6 +39,16 @@ namespace warehouse.Core
         public void RemoveUI()
         {
             HireUI.SetActive(false);
+        }
+        public void hire()
+        {
+            for(int i = 0; i < HireCount; i++)
+            {
+                GameObject R = Instantiate(Robot, Inventory.position, Quaternion.identity, Inventory);
+                R.GetComponent<warehouse.Move.moveBot>().TargetToInitPosition = Inventory;
+                R.GetComponent<warehouse.Move.moveBot>().chargerCollection = chargingCollection;
+                R.GetComponent<warehouse.Move.moveBot>().TargetToDustbin = DustbinPosition;
+            }
         }
         public void Hire()
         {

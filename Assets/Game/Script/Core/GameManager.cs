@@ -48,7 +48,7 @@ namespace warehouse.Core
         [Space(10)]
         public int ParkingLot = 500;
         public int Bots = 1500;
-        public int ChargindStation = 3000;
+        public int ChargingStation = 3000;
         public int RefillingCost = 500;
 
         void Start()
@@ -206,6 +206,7 @@ namespace warehouse.Core
             currentTruckLoaded -= maxTruckToLoad;
             maxTruckToLoad = MaxCustomerCount();
             UpgradeButton.SetActive(false);
+            FindObjectOfType<SaveData>().Save();
         }
 
         public void addReward()
