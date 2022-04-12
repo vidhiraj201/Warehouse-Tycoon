@@ -14,6 +14,7 @@ namespace warehouse.Control
         public CinemachineVirtualCamera cinemachineVirtual;
         
         public Slider Progress;
+        public GameObject ProgressText;
         public Animator CameraB;
         public Animator loadItem;
         public GameObject Joystick;
@@ -39,6 +40,7 @@ namespace warehouse.Control
             CameraB = GameObject.Find("Camera Blend").GetComponent<Animator>();
             Tape.gameObject.SetActive(false);
             Progress.gameObject.SetActive(false);
+            ProgressText.gameObject.SetActive(false);
             controlLoadingDack = GetComponent<controlLoadingDack>();
         }
 
@@ -102,6 +104,7 @@ namespace warehouse.Control
             yield return new WaitForSeconds(1.5f);
             controlLoadingDack.TargetTruck.GetComponent<controlNPCTruck>().Upgrade.SetActive(true);
             Progress.gameObject.SetActive(true);
+            ProgressText.gameObject.SetActive(true);
         }
         IEnumerator upgradeUIDelay(float t)
         {
@@ -144,6 +147,7 @@ namespace warehouse.Control
             RotatingObjectStack.localRotation = Quaternion.identity;
             Tape.gameObject.SetActive(false);
             Progress.gameObject.SetActive(false);
+            ProgressText.gameObject.SetActive(false);
             curVal = 0;
             x = 0;
             isCameraActivated = false;

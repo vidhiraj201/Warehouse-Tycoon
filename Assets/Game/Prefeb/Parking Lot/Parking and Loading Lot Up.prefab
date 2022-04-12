@@ -95,7 +95,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -5.1786, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3822520082817738479
 CanvasRenderer:
@@ -152,8 +152,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.4
+  m_fontSizeBase: 0.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -219,18 +219,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165445634013120999}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3755157110928344231}
-  m_Father: {fileID: 5127381266764170826}
-  m_RootOrder: 3
+  m_Father: {fileID: 6643738979140712064}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 7.64}
-  m_SizeDelta: {x: 1.6713, y: -5.3484}
+  m_AnchoredPosition: {x: 0, y: -0.4073496}
+  m_SizeDelta: {x: 0, y: 0.8146992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8017432676232067700
 CanvasRenderer:
@@ -1493,6 +1493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cinemachineVirtual: {fileID: 0}
   Progress: {fileID: 42900496003990933}
+  ProgressText: {fileID: 165445634013120999}
   CameraB: {fileID: 0}
   loadItem: {fileID: 2843225055733302976}
   Joystick: {fileID: 0}
@@ -1743,7 +1744,6 @@ RectTransform:
   - {fileID: 26063725926848609}
   - {fileID: 6072978398686665256}
   - {fileID: 6745903855954534176}
-  - {fileID: 8335365629903858085}
   m_Father: {fileID: 6643738979140712064}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2227,6 +2227,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5127381266764170826}
+  - {fileID: 8335365629903858085}
   m_Father: {fileID: 2840782446425812233}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -25,7 +25,7 @@ namespace warehouse.Control{
                 indicator.SetActive(true);
             }
 
-            if (controlLoading.TradeCompleted && controlLoading.isPlayerNear)
+            if (controlLoading.isPlayerNear)
             {
                 indicator.SetActive(false);
             }
