@@ -1077,8 +1077,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26352151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.9436, y: 0, z: -7.1833}
-  m_LocalScale: {x: 6.352756, y: 1, z: 5.2954893}
+  m_LocalPosition: {x: 27.0029, y: 0, z: -7.1833}
+  m_LocalScale: {x: 5.7408648, y: 1, z: 5.2954893}
   m_Children: []
   m_Father: {fileID: 1301358586}
   m_RootOrder: 0
@@ -52005,7 +52005,7 @@ MonoBehaviour:
   currentCapacity: 0
   ID: 0
   isPlayerNear: 0
-  isLocked: 1
+  isLocked: 0
   isBought: 0
   UI: {fileID: 7415947}
   Price: {fileID: 956916970}
@@ -57272,6 +57272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parking and Loading Lot Up
       objectReference: {fileID: 0}
+    - target: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3931621956117235256, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -60579,7 +60583,7 @@ MonoBehaviour:
   currentCapacity: 0
   ID: 4
   isPlayerNear: 0
-  isLocked: 0
+  isLocked: 1
   isBought: 0
   UI: {fileID: 1526268690}
   Price: {fileID: 41275030}
@@ -63766,8 +63770,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647889626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.9436, y: 0, z: -7.1833}
-  m_LocalScale: {x: 6.352756, y: 1, z: 5.2954893}
+  m_LocalPosition: {x: 27.934, y: 0, z: -7.1833}
+  m_LocalScale: {x: 6.778349, y: 1, z: 5.2954893}
   m_Children: []
   m_Father: {fileID: 1569533185}
   m_RootOrder: 0
@@ -68979,6 +68983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parking and Loading Lot Up
       objectReference: {fileID: 0}
+    - target: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3931621956117235256, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -73896,6 +73904,10 @@ PrefabInstance:
     - target: {fileID: 2840782446281009374, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
       propertyPath: m_Name
       value: Parking and Loading Lot Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018262433676227853, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
+      propertyPath: isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3931621956117235256, guid: b05f6d2cf118ef04dacef7ea70ee6d82, type: 3}
       propertyPath: m_AnchorMax.y
