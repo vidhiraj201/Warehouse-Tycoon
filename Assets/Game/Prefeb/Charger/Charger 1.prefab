@@ -470,6 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1a532fc04a45d4e8510dd516ed0cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PortManager: {fileID: 0}
   Locked: {fileID: 7823812977268492180}
   Unlocked: {fileID: 5647297651480146175}
   money: {fileID: 6323687572881752757}
@@ -728,6 +729,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8080161176510941130}
     m_Modifications:
+    - target: {fileID: 502517802505691150, guid: 349c0640c693ad04789814aa9844639b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 600205220806965259, guid: 349c0640c693ad04789814aa9844639b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -740,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7f5ec7180a512b54893b48618d205490, type: 2}
+    - target: {fileID: 3907315031753652810, guid: 349c0640c693ad04789814aa9844639b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4030814171048637068, guid: 349c0640c693ad04789814aa9844639b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -800,6 +809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charging Station_02_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4387169734696331316, guid: 349c0640c693ad04789814aa9844639b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4512278289983286987, guid: 349c0640c693ad04789814aa9844639b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -808,10 +821,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b47afd2903b0c1e46bdfc7c78a522445, type: 2}
+    - target: {fileID: 6246183185647804801, guid: 349c0640c693ad04789814aa9844639b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7011633367285868314, guid: 349c0640c693ad04789814aa9844639b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f14ac62844b73b949b08b7e7d4790eaf, type: 2}
+    - target: {fileID: 8130545175373474563, guid: 349c0640c693ad04789814aa9844639b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349c0640c693ad04789814aa9844639b, type: 3}
 --- !u!4 &569282473726670517 stripped

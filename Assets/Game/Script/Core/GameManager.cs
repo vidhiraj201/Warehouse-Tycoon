@@ -92,12 +92,12 @@ namespace warehouse.Core
         }
         public void UIUpdates()
         {
-            if (currentLevel >= 1)
+           /* if (currentLevel > 0)
             {
                 currentLevelText.text = currentLevel.ToString("N0");
                 nextLevelText.text = (currentLevel + 1).ToString("N0");
-            }
-            if (currentLevel == 0)
+            }*/
+            if (currentLevel >= 0)
             {
                 currentLevelText.text = (currentLevel+1).ToString("N0");
                 nextLevelText.text = (currentLevel + 2).ToString("N0");

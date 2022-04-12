@@ -25,6 +25,7 @@ namespace warehouse.Core
         void Update()
         {
             LevelUnlockText.text = LevelUnlockPrintText;
+
             if (GameManager.currentLevel >= UnlockLevelVal && !isUnlocked)
             {
                 StartCoroutine(UnlockLevel(DelayInUnlock));
@@ -32,10 +33,10 @@ namespace warehouse.Core
             if (isUnlocked)
             {
                 Ground.SetActive(true);
+                this.gameObject.SetActive(false);
                /* PickupArea.SetActive(true);
                 ParkingDeck.SetActive(true);
                 wallSet.SetActive(true);*/
-                this.gameObject.SetActive(false);
             }
         }
         IEnumerator UnlockLevel(float t)
@@ -43,10 +44,10 @@ namespace warehouse.Core
             cam.Play(Camera);
             yield return new WaitForSeconds(t);
             Ground.SetActive(true);
+            this.gameObject.SetActive(false);
             /*PickupArea.SetActive(true);
             ParkingDeck.SetActive(true);
             wallSet.SetActive(true);*/
-            this.gameObject.SetActive(false);
         }        
     }
 }
