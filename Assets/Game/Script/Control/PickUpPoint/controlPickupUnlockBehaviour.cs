@@ -12,21 +12,23 @@ namespace warehouse.Control
         public float maxMoneyNeedToUnlock = 100;
         public float amountReducer = 50;
         private Core.GameManager gameManager;
-
+        private coreAudioManager audioManager;
         //public bool isRecord;
         void Start()
         {
             gameManager = FindObjectOfType<Core.GameManager>();
+            audioManager = FindObjectOfType<coreAudioManager>();
         }
 
 
         void Update()
         {
             money.text = "$" + maxMoneyNeedToUnlock.ToString();
-            if (maxMoneyNeedToUnlock <= 0)
+            if (maxMoneyNeedToUnlock <= 0 && controlPickup.isLocked)
             {
                 controlPickup.isLocked = false;
                 money.gameObject.SetActive(false);
+                audioManager.source.PlayOneShot(audioManager.Unlock);
             }
 
             if (!controlPickup.isLocked)

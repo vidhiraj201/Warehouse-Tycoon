@@ -13,10 +13,12 @@ namespace warehouse.Control
 
         public int MaxLimit;
         public int CurrentLimit;
-        public float cartUpdateSpeed;
+        public float cartUpdateSpeed;        
         private Transform EndPosition;
+        private coreAudioManager audioManager;
         void Start()
         {
+            audioManager = FindObjectOfType<coreAudioManager>();
             CurrentLimit = MaxLimit;
         }
 
@@ -83,6 +85,7 @@ namespace warehouse.Control
                             controlPickup c = col.GetComponent<controlPickup>();
                             if (c.Cart.Count > 0)
                             {
+                                audioManager.source.PlayOneShot(audioManager.Collect);
                                 Cart.Add(c.Cart[c.Cart.Count - 1]);
                                 Cart[Cart.Count - 1].transform.parent = cartTransform;
                                 c.Cart.Remove(c.Cart[c.Cart.Count - 1]);
@@ -126,6 +129,7 @@ namespace warehouse.Control
                         c[c.Count - 1].transform.parent = inventory;
                         c[c.Count - 1].transform.GetComponent<controlObject>().isMove = true;
                         c[c.Count - 1].transform.GetComponent<controlObject>().movementSpeed = G.GetComponent<controlLoadingDack>().ObjectMovementSpeed;             
+                        audioManager.source.PlayOneShot(audioManager.Sell);
                         clear();
                         break;
                     }
@@ -154,6 +158,7 @@ namespace warehouse.Control
                         {
 
                             cartManagement();
+                            audioManager.source.PlayOneShot(audioManager.Sell);
                             CurrentLimit += Cart[i].GetComponent<controlObject>().objectHeight;
                             Cart[i].transform.GetComponent<controlObject>().EndPosition = Vector3.zero;
                             Cart[i].transform.parent = collider.transform;
@@ -186,6 +191,7 @@ namespace warehouse.Control
             {
                 if (Cart.Count > 0)
                 {
+                    audioManager.source.PlayOneShot(audioManager.Sell);
                     CurrentLimit += Cart[Cart.Count - 1].GetComponent<controlObject>().objectHeight;
                     Cart[Cart.Count - 1].transform.parent = other.transform;
                     Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition = Vector3.zero;

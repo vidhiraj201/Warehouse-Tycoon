@@ -10,6 +10,7 @@ namespace warehouse.Control
         public Core.coreChargingPortManager PortManager;
         private Move.moveBot moveBot;
         private Core.GameManager GameManager;
+        private coreAudioManager audioManager;
         [Header("lock")]
         public GameObject Locked;
         public GameObject Unlocked;
@@ -33,7 +34,7 @@ namespace warehouse.Control
         void Start()
         {
             GameManager = FindObjectOfType<Core.GameManager>();
-            
+            audioManager = FindObjectOfType<coreAudioManager>();
         }
 
         
@@ -69,6 +70,7 @@ namespace warehouse.Control
             {
                 isLocked = false;
                 money.gameObject.SetActive(false);
+                audioManager.source.PlayOneShot(audioManager.Unlock);
                 GameManager.ChargingStation += 1500;
             }
 

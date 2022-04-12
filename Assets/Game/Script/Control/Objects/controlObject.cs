@@ -19,14 +19,16 @@ namespace warehouse.Control
         public bool isObjectTouch;
         public bool isReched = false;
         public bool isDestroy;
+        public bool playAudio;
         private Rigidbody rb;
         private Transform downChecker;
         private RaycastHit hit;
-
+        private coreAudioManager audioManager;
         void Start()
         {
             rb = GetComponent<Rigidbody>();
             downChecker = transform.GetChild(0);
+            audioManager = FindObjectOfType<coreAudioManager>();
         }
 
 
@@ -36,6 +38,11 @@ namespace warehouse.Control
             objectMove();
             if (isDestroy)
                 Destroy(this.gameObject, 0.25f);
+            if (playAudio)
+            {
+                audioManager.source.PlayOneShot(audioManager.Sell);
+                playAudio = false;
+            }
         }
         void objectMove()
         {

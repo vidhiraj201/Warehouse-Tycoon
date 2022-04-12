@@ -29,6 +29,7 @@ namespace warehouse.Control
         private Core.GameManager gm;
         private Move.movePlayer movePlayer;
 
+
         float x = 0.2f;
         private void Start()
         {

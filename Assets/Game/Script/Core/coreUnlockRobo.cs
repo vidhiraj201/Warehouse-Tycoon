@@ -15,7 +15,7 @@ namespace warehouse.Core
         public warehouse.Control.controlPickup controlPickup;
         public warehouse.Control.controlCharger controlCharger;
         public warehouse.Core.coreRobotSpwanner RobotSpwanner;
-
+        private coreAudioManager audioManager;
         
 
         private Core.GameManager GameManager;
@@ -23,7 +23,7 @@ namespace warehouse.Core
         void Start()
         {
             GameManager = FindObjectOfType<warehouse.Core.GameManager>();
-
+            audioManager = FindObjectOfType<coreAudioManager>();
         }
 
         
@@ -41,11 +41,13 @@ namespace warehouse.Core
 
         void unlockBattery()
         {
-            if (GameManager.currentLevel >= Level && !UnlockableObject.activeSelf)
+            if (GameManager.currentLevel >= Level && !UnlockableObject.activeSelf && controlPickup.isLocked)
             {
                 UnlockableObject.SetActive(true);
                 LockableObject.SetActive(false);
+                audioManager.source.PlayOneShot(audioManager.Unlock);
                 controlPickup.isLocked = false;
+
             }
             if (GameManager.currentLevel >= Level && UnlockableObject.activeSelf)
                 controlPickup.isLocked = false;
@@ -60,14 +62,16 @@ namespace warehouse.Core
             else if(GameManager.currentLevel >= Level && !UnlockableObject.activeSelf)
             {
                 UnlockableObject.SetActive(true);
+                audioManager.source.PlayOneShot(audioManager.Unlock);
             }        
         }
         void unlockRoboSpwanner()
         {
-            if (GameManager.currentLevel >= Level && !UnlockableObject.activeSelf)
+            if (GameManager.currentLevel >= Level && !UnlockableObject.activeSelf && RobotSpwanner.isLocked)
             {
                 UnlockableObject.SetActive(true);
                 LockableObject.SetActive(false);
+                audioManager.source.PlayOneShot(audioManager.Unlock);
                 RobotSpwanner.isLocked = false;
             }
             if (GameManager.currentLevel >= Level && UnlockableObject.activeSelf)

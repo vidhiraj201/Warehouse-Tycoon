@@ -18,12 +18,14 @@ namespace warehouse.Control
         private float maxMoneyNeedToUnlock = 100;
         public float amountReducer = 50;
         private Core.GameManager GameManager;
+        private coreAudioManager audioManager;
 
         //public bool isRecord;
 
         void Start()
         {
             GameManager = FindObjectOfType<Core.GameManager>();
+            audioManager = FindObjectOfType<coreAudioManager>();
         }
 
         public bool isReducing;
@@ -38,6 +40,7 @@ namespace warehouse.Control
             {
                 controlParkingDack.isLocked = false;
                 money.gameObject.SetActive(false);
+                audioManager.source.PlayOneShot(audioManager.Unlock);
                 GameManager.ParkingLot += 100;
             }
 

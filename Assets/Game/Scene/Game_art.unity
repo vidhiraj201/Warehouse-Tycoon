@@ -20443,6 +20443,8 @@ GameObject:
   - component: {fileID: 516565260}
   - component: {fileID: 516565261}
   - component: {fileID: 516565262}
+  - component: {fileID: 516565264}
+  - component: {fileID: 516565263}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -20559,6 +20561,122 @@ MonoBehaviour:
   aSLData: {fileID: 298323951}
   bSLData: {fileID: 0}
   cSLData: {fileID: 0}
+--- !u!82 &516565263
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516565257}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &516565264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516565257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9914c201c4ff7d54ba075862dd910fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 516565263}
+  Sell: {fileID: 8300000, guid: c3ff7d4a457c3f243afd4a91c0ed1e94, type: 3}
+  Collect: {fileID: 8300000, guid: 1b82546833aacb545819afb5583dfea5, type: 3}
+  CollectMoney: {fileID: 8300000, guid: a0f4db4b64346e942be310ec903d5fc6, type: 3}
+  MoneyCount: {fileID: 8300000, guid: 7d4c34f66b166574e9d7ec17d2b08098, type: 3}
+  Unlock: {fileID: 8300000, guid: c6a2d0421506e64499551016017450c3, type: 3}
+  UpgradeButton: {fileID: 8300000, guid: 00eee0eebb8c3cd4ab90bf7c0c172e87, type: 3}
+  Upgrade: {fileID: 8300000, guid: a855ca660c498124fb47ecbbc9151fc2, type: 3}
 --- !u!1001 &520569847
 PrefabInstance:
   m_ObjectHideFlags: 0

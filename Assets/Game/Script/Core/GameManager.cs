@@ -51,11 +51,14 @@ namespace warehouse.Core
         public int ChargingStation = 3000;
         public int RefillingCost = 500;
 
+
+        private coreAudioManager audioManager;
         void Start()
         {
             Application.targetFrameRate = 60;
             currentMoney = maxMoney;
             maxTruckToLoad = MaxCustomerCount();
+            audioManager = FindObjectOfType<coreAudioManager>();
         }
 
         
@@ -131,9 +134,10 @@ namespace warehouse.Core
 
         public void upgrade()
         {
-            if(currentTruckLoaded >= maxTruckToLoad)
+            if(currentTruckLoaded >= maxTruckToLoad && !UpgradeButton.activeSelf)
             {
                 UpgradeButton.SetActive(truckCount);
+                audioManager.source.PlayOneShot(audioManager.Upgrade);
             }
             if(currentLevel == 4 || currentLevel == 9)
             {
@@ -207,11 +211,14 @@ namespace warehouse.Core
             maxTruckToLoad = MaxCustomerCount();
             UpgradeButton.SetActive(false);
             FindObjectOfType<SaveData>().Save();
+            /*audioManager.source.PlayOneShot(audioManager.UpgradeButton);*/            
         }
 
         public void addReward()
         {
             maxMoney += Reward();
+            if(Reward() >=1)
+                audioManager.source.PlayOneShot(audioManager.MoneyCount);
         }
 
         public int Reward()

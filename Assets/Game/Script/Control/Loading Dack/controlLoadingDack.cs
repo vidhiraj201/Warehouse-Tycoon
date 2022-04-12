@@ -24,8 +24,10 @@ namespace warehouse.Control
         public float ObjectMovementSpeed = 35;
 
         public bool TradeCompleted;
+        private coreAudioManager audioManager;
         private void Start()
         {
+            audioManager = FindObjectOfType<coreAudioManager>();
             corePickupArea = FindObjectOfType<Core.corePickupArea>();
             x = cartUpdateSpeed;
         }
@@ -67,7 +69,7 @@ namespace warehouse.Control
             if (Cart.Count <= 1 /*&& Cart.Count % StackingArrayX != 0 && Cart.Count % StackingArrayCount != 0*/)
             {
                 Cart[Cart.Count - 1].transform.GetComponent<controlObject>().EndPosition = StartPosition;
-                
+                //audioManager.source.PlayOneShot(audioManager.Sell);
                 return;
             }
             if (Cart.Count > 1 && Cart.Count % StackingArrayX != 0 && Cart.Count % StackingArrayCount != 0) 
@@ -75,8 +77,7 @@ namespace warehouse.Control
                 Cart[Cart.Count - 1].GetComponent<controlObject>().EndPosition =
                     new Vector3(Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.x + 0.95f,
                     Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.y,
-                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.z);
-                
+                    Cart[Cart.Count - 2].GetComponent<controlObject>().EndPosition.z);                
                 return;
             }
             if (Cart.Count > 1 && Cart.Count % StackingArrayX == 0 && Cart.Count % StackingArrayCount != 0)
@@ -98,40 +99,7 @@ namespace warehouse.Control
                 return;
             }
         }
-        float x = 0;
-        public void AddObjectToCart(Collider col)
-        {
-            if (x > 0)
-                x -= Time.deltaTime;
-            if (x <= 0)
-            {
-                try
-                {
-                    if (col.GetComponent<controlPlayerInventory>())
-                    {
-                        controlPlayerInventory c = col.GetComponent<controlPlayerInventory>();
-                        c.CurrentLimit += c.Cart[c.Cart.Count - 1].GetComponent<controlObject>().objectHeight;
-                        Cart.Add(c.Cart[c.Cart.Count - 1]);
-                        c.Cart.Remove(c.Cart[c.Cart.Count - 1]);                        
-                        Cart[Cart.Count - 1].transform.parent = inventory;
-                        //ArrangeObjectInCart();
-                        Cart[Cart.Count - 1].transform.GetComponent<controlObject>().isMove = true;
-                        /*Cart[Cart.Count - 1].transform.GetComponent<controlObject>().isOnInvetory = true;*/
-                        Cart[Cart.Count - 1].transform.GetComponent<controlObject>().movementSpeed = ObjectMovementSpeed;
-                        x = cartUpdateSpeed;
-                        return;
-                    }
-                    else
-                    {
-                        print("Error");
-                    }
-                }
-                catch
-                {
-
-                }
-            }
-        }
+        float x = 0.2f;
 
         public controlPlayerInventory controlPlayerInventory;
         public controlBotInvetory controlBotInvetory;
@@ -179,36 +147,42 @@ namespace warehouse.Control
                         controlPlayerInventory.AddObjectToLoadingCart(TargetTruck.GetComponent<controlNPCTruck>().iRed, 
                             TargetTruck.GetComponent<controlNPCTruck>().nRed,
                             Cart, inventory, this.gameObject);
+                        x = cartUpdateSpeed;
                     }
                     if (TargetTruck.GetComponent<controlNPCTruck>().nYellow > 0)
                     {
                         controlPlayerInventory.AddObjectToLoadingCart(TargetTruck.GetComponent<controlNPCTruck>().iYellow, 
                             TargetTruck.GetComponent<controlNPCTruck>().nYellow,
                             Cart, inventory, this.gameObject);
+                        x = cartUpdateSpeed;
                     }
                     if (TargetTruck.GetComponent<controlNPCTruck>().nGreen > 0)
                     {
                         controlPlayerInventory.AddObjectToLoadingCart(TargetTruck.GetComponent<controlNPCTruck>().iGreen,
                             TargetTruck.GetComponent<controlNPCTruck>().nGreen,
                             Cart, inventory, this.gameObject);
+                        x = cartUpdateSpeed;
                     }
                     if (TargetTruck.GetComponent<controlNPCTruck>().nBlue > 0)
                     {
                         controlPlayerInventory.AddObjectToLoadingCart(TargetTruck.GetComponent<controlNPCTruck>().iBlue,
                             TargetTruck.GetComponent<controlNPCTruck>().nBlue,
                             Cart, inventory, this.gameObject);
+                        x = cartUpdateSpeed;
                     }
                     if (TargetTruck.GetComponent<controlNPCTruck>().nOrange > 0)
                     {
                         controlPlayerInventory.AddObjectToLoadingCart(TargetTruck.GetComponent<controlNPCTruck>().iOrange,
                             TargetTruck.GetComponent<controlNPCTruck>().nOrange,
                             Cart, inventory, this.gameObject);
+                        x = cartUpdateSpeed;
                     }
                     if (TargetTruck.GetComponent<controlNPCTruck>().nViolet > 0)
                     {
                         controlPlayerInventory.AddObjectToLoadingCart(TargetTruck.GetComponent<controlNPCTruck>().iOrange,
                             TargetTruck.GetComponent<controlNPCTruck>().nOrange,
                             Cart, inventory, this.gameObject);
+                        x = cartUpdateSpeed;
                     }
 
                 }

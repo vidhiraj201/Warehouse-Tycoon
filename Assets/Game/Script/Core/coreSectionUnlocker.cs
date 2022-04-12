@@ -17,8 +17,10 @@ namespace warehouse.Core
         public float DelayInUnlock;
         public bool isUnlocked;
         private GameManager GameManager;
+        private coreAudioManager audioManager;
         void Start()
         {
+            audioManager = FindObjectOfType<coreAudioManager>();
             GameManager = FindObjectOfType<GameManager>();
         }
 
@@ -43,6 +45,7 @@ namespace warehouse.Core
         {
             cam.Play(Camera);
             yield return new WaitForSeconds(t);
+            audioManager.source.PlayOneShot(audioManager.Upgrade);
             Ground.SetActive(true);
             this.gameObject.SetActive(false);
             isUnlocked = true;

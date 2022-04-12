@@ -1231,7 +1231,7 @@ MonoBehaviour:
   StartPosition: {x: 0, y: 0.4, z: 0}
   StackingArrayX: 3
   StackingArrayCount: 9
-  cartUpdateSpeed: 0.2
+  cartUpdateSpeed: 0.05
   ObjectMovementSpeed: 30
   TradeCompleted: 0
   i: 0
@@ -1294,6 +1294,7 @@ MonoBehaviour:
   curVal: 0
   isProgressComplete: 0
   isCameraActivated: 0
+  StartPtocessing: 0
 --- !u!114 &1733446059742747309
 MonoBehaviour:
   m_ObjectHideFlags: 0

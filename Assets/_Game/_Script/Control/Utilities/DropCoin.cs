@@ -10,6 +10,7 @@ namespace FashionM.Core
         public int Coins = 100;
         private bool StoreToPlayer;
         public AudioSource audioSource;
+        private coreAudioManager audioManager;
         public void detatachFromClient()
         {
             transform.parent = null;
@@ -21,6 +22,7 @@ namespace FashionM.Core
 
         void Start()
         {
+            audioManager = FindObjectOfType<coreAudioManager>();
             transform.rotation = Random.rotation;
             GetComponent<Rigidbody>().AddForce(transform.up * force, ForceMode.Impulse);
             GetComponent<Rigidbody>().AddForce(transform.forward * (force), ForceMode.Impulse);
@@ -44,6 +46,7 @@ namespace FashionM.Core
             }
             if (collision.gameObject.CompareTag("Player") && !GetComponent<Rigidbody>().isKinematic)
             {
+                audioManager.source.PlayOneShot(audioManager.CollectMoney);
                 StoreToPlayer = true;
                 FindObjectOfType<warehouse.Core.GameManager>().maxMoney += Coins;
                 Destroy(this.gameObject, 0.15f);
@@ -58,6 +61,7 @@ namespace FashionM.Core
             }
             if (other.gameObject.CompareTag("Player") && GetComponent<Rigidbody>().isKinematic)
             {
+                audioManager.source.PlayOneShot(audioManager.CollectMoney);
                 StoreToPlayer = true;
                 FindObjectOfType<warehouse.Core.GameManager>().maxMoney += Coins;
                 Destroy(this.gameObject, 0.15f);
