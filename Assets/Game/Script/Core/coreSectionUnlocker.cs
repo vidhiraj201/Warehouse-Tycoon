@@ -48,6 +48,7 @@ namespace warehouse.Core
             audioManager.source.PlayOneShot(audioManager.Upgrade);
             Ground.SetActive(true);
             this.gameObject.SetActive(false);
+            FindObjectOfType<GAManager>().RoomUnlocked(this.transform);
             isUnlocked = true;
             /*PickupArea.SetActive(true);
             ParkingDeck.SetActive(true);

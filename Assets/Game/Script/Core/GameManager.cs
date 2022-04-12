@@ -205,13 +205,13 @@ namespace warehouse.Core
         }
         public void UpgradeLevel()
         {
+            FindObjectOfType<GAManager>().CompleteLevel(currentLevel);           
             addReward();
             currentLevel += 1;
             currentTruckLoaded -= maxTruckToLoad;
             maxTruckToLoad = MaxCustomerCount();
             UpgradeButton.SetActive(false);
             FindObjectOfType<SaveData>().Save();
-            /*audioManager.source.PlayOneShot(audioManager.UpgradeButton);*/            
         }
 
         public void addReward()

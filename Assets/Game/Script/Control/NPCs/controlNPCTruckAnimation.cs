@@ -29,11 +29,18 @@ namespace warehouse.Control
         public TextMeshProUGUI tBlue;
         public TextMeshProUGUI tOrange;
         public TextMeshProUGUI tViolet;
+
+        public AudioSource source;
+        public AudioClip Clip;
         void Start()
         {
             CheckForAskingColor();
         }
 
+        public void PlaySound()
+        {
+            source.PlayOneShot(Clip);
+        }
         
         void Update()
         {
