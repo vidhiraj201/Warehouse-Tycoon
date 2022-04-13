@@ -34,8 +34,26 @@ namespace warehouse.Core
         {
             Amount.text = gameManager.Bots.ToString("N0");
             BotCount.text = FindObjectOfType<Core.corePickupArea>().RobotCount.Count.ToString("N0");
+            unlock();
         }
-
+        [Space(10)]
+        public GameObject Unlocked;
+        public GameObject Locked;
+        public Collider Collider;
+        public void unlock()
+        {
+            if (!isLocked)
+            {
+                Collider.enabled = true;
+                Unlocked.SetActive(true);
+                Locked.SetActive(false);
+            }else if (isLocked)
+            {
+                Unlocked.SetActive(false);
+                Locked.SetActive(true);
+                Collider.enabled = false;
+            }
+        }
         public void RemoveUI()
         {
             HireUI.SetActive(false);
