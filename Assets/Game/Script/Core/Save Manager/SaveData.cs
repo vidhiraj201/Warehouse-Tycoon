@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    float x;
+    float x = 3;
     public float xCounter = 1;
     public uSLData uSLData;
     public aSLData aSLData;
     public bSLData bSLData;
     public cSLData cSLData;
+    private void Awake()
+    {
+        x = xCounter;
+    }
     private void Update()
     {
         if (x > 0)

@@ -145,15 +145,16 @@ namespace warehouse.Control
         {
             Tape.localScale = new Vector3(Tape.localScale.x, 0, Tape.localScale.z);
             RotatingObjectStack.localRotation = Quaternion.identity;
-            Tape.gameObject.SetActive(false);
-            Progress.gameObject.SetActive(false);
-            ProgressText.gameObject.SetActive(false);
             curVal = 0;
             x = 0;
+            Progress.value = 0;
             isCameraActivated = false;
             StartPtocessing = false;
             isProgressComplete = false;
             Joystick.SetActive(true);
+            Tape.gameObject.SetActive(false);
+            Progress.gameObject.SetActive(false);
+            ProgressText.gameObject.SetActive(false);
 
         }
 

@@ -23,7 +23,7 @@ public class cSLData : MonoBehaviour
     private void Awake()
     {
         data = cSaveManager.Load();
-       // bLoadGame();
+        cLoadGame();
     }
     public void cSaveGame()
     {

@@ -23,7 +23,7 @@ public class bSLData : MonoBehaviour
     private void Awake()
     {
         data = bSaveManager.Load();
-       // bLoadGame();
+         bLoadGame();
     }
     public void bSaveGame()
     {

@@ -23,7 +23,7 @@ public class aSLData : MonoBehaviour
     private void Awake()
     {
         data = aSaveManager.Load();
-       // aLoadGame();
+         aLoadGame();
     }
     public void aSaveGame()
     {

@@ -60,7 +60,8 @@ public class coreUnlockBatteryAndShop : MonoBehaviour
         yield return new WaitForSeconds(t);
         UnlockableObject.SetActive(true);
         LockableObject.SetActive(false);
-        audioManager.source.PlayOneShot(audioManager.Unlock);
+        if(controlPickup.isLocked)
+            audioManager.source.PlayOneShot(audioManager.Unlock);
         controlPickup.isLocked = false;
     }
 }
