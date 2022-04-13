@@ -59,8 +59,9 @@ namespace warehouse.Core
                 CC.Play(Camera);
 
             yield return new WaitForSeconds(t);
+            if(!UnlockableObject.activeSelf)
+                audioManager.source.PlayOneShot(audioManager.Unlock);
             UnlockableObject.SetActive(true);
-            audioManager.source.PlayOneShot(audioManager.Unlock);
         }
     }
 }

@@ -114,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: Coins
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: force
@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: Coins
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: force
@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: Coins
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: force
@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: Coins
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: force
@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: Coins
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5886751046341158442, guid: 81eff56d3f2cded43b5d25f8c6b8b976, type: 3}
       propertyPath: force

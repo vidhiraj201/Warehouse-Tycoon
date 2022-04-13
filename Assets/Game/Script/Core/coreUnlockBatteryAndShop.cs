@@ -50,7 +50,8 @@ public class coreUnlockBatteryAndShop : MonoBehaviour
     {
         CC.Play(Camera);
         yield return new WaitForSeconds(t);
-        audioManager.source.PlayOneShot(audioManager.Unlock);
+        if(RobotSpwanner_1.isLocked)
+            audioManager.source.PlayOneShot(audioManager.Unlock);
         RobotSpwanner_1.isLocked = false;
         RobotSpwanner_2.isLocked = false;
        
